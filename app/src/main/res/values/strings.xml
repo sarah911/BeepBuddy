@@ -5,15 +5,25 @@
     <string name="parkingDuration">Parking Duration</string>
     <string name="carPlate">Car Plate Number</string>
     <string name="suitNumber">Host\'s Suit Number</string>
-    <string name="one">1 hour less</string>
-    <string name="three">Upto 3 hours</string>
-    <string name="ten">Upto 10 hours</string>
-    <string name="max">Maximum, Upto 24 hours</string>
-    <string-array name="duration_array">
-        <item>@string/one</item>
-        <item>@string/three</item>
-        <item>@string/ten</item>
-        <item>@string/max</item>
-    </string-array>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="forgetPassword">Forget Password?</string>
+    <string name="remember">Remember Me</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmPass">Confirm Password</string>
+    <string name="submit">SUBMIT</string>
+    <string name="cancel">CANCEL</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="paymentType">Payment Type</string>
+    <string name="paymentInfo">Payment Information</string>
+    <string name="cardName">Card Name</string>
+    <string name="visa">VISA</string>
+    <string name="mastercard">Mastercard</string>
+    <string name="cvv">CVV</string>
+    <string name="expDate">Expiry Date:</string>
+
 
 </resources>
