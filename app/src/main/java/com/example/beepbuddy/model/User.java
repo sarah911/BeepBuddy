@@ -2,13 +2,20 @@ package com.example.beepbuddy.model;
 
 import java.util.Date;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 /**
  * BeepBuddy created by caitlinrush
  * student ID : 991534296
  * on 2019-11-24
  */
+@Entity(tableName = "user_table")
 public class User {
 
+    @PrimaryKey
+    @NonNull
     private int id;
 
     private String firstName;
