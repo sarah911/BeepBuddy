@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BeepBuddy</string>
+    <string name="heading1">Add Parking</string>
+    <string name="buildingCode">Building Code</string>
+    <string name="parkingDuration">Parking Duration</string>
+    <string name="carPlate">Car Plate Number</string>
+    <string name="suitNumber">Host\'s Suit Number</string>
+
 </resources>
