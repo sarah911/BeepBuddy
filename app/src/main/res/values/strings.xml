@@ -4,7 +4,7 @@
     <string name="buildingCode">Building Code</string>
     <string name="parkingDuration">Parking Duration</string>
     <string name="carPlate">Car Plate Number</string>
-    <string name="suitNumber">Host\'s Suit Number</string>
+    <string name="suiteNumber">Host\'s Suite Number</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="signIn">Sign In</string>
@@ -24,6 +24,21 @@
     <string name="mastercard">Mastercard</string>
     <string name="cvv">CVV</string>
     <string name="expDate">Expiry Date:</string>
+    <string name="parkingReceipt">Parking Receipt</string>
+    <string name="date">Date of Parking</string>
+    <string name="time">Time of Parking</string>
+    <string name="parkingCost">Parking Cost</string>
+    <string name="one">1 hour less</string>
+    <string name="three">Upto 3 hours</string>
+    <string name="ten">Upto 10 hours</string>
+    <string name="max">Maximum, Upto 24 hours</string>
+    <string-array name="duration_array">
+        <item>@string/one</item>
+        <item>@string/three</item>
+        <item>@string/ten</item>
+        <item>@string/max</item>
+    </string-array>
+
 
 
 </resources>
