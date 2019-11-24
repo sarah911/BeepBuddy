@@ -8,7 +8,7 @@
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="signIn">Sign In</string>
-    <string name="signUp">Sign Up</string>
+    <string name="signUp">Not a member? Sign Up!</string>
     <string name="forgetPassword">Forget Password?</string>
     <string name="remember">Remember Me</string>
     <string name="email">Email</string>
