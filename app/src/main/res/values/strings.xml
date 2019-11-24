@@ -5,5 +5,15 @@
     <string name="parkingDuration">Parking Duration</string>
     <string name="carPlate">Car Plate Number</string>
     <string name="suitNumber">Host\'s Suit Number</string>
+    <string name="one">1 hour less</string>
+    <string name="three">Upto 3 hours</string>
+    <string name="ten">Upto 10 hours</string>
+    <string name="max">Maximum, Upto 24 hours</string>
+    <string-array name="duration_array">
+        <item>@string/one</item>
+        <item>@string/three</item>
+        <item>@string/ten</item>
+        <item>@string/max</item>
+    </string-array>
 
 </resources>
