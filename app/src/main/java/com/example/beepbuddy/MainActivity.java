@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import java.net.Inet4Address;
 
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 //TODO
                 break;
             case R.id.item_profile:
-                //this.editProfile();
+                this.editProfile();
                 break;
             case R.id.item_manual:
                 Intent intentM = new Intent(this, WebActivity.class);
@@ -64,12 +66,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-//void editProfile(){
-//    LayoutInflater inflater = getLayoutInflater();
-//    final View dialogView = new AlertDialog.Builder(this)
-//            .setTitle("Edit Profile")
-//            .setMessage("Please update profile details")
-//            .setPositiveButton("Update", )
-//}
+    void editProfile(){
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.dialog_edit, null);
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle("Edit Profile")
+                .setMessage("Please update profile details")
+                .setView(dialogView)
+                .setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        EditText editFN = dialogView.findViewById(R.id.editFN);
+                        EditText editLN = dialogView.findViewById(R.id.editLN);
+
+
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .create();
+        alertDialog.show();
+    }
 
 }
