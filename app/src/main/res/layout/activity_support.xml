@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="@+id/imgLogoSup"
         app:layout_constraintTop_toBottomOf="@+id/imgLogoSup"
-        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+        app:srcCompat="@drawable/phone-call" />
 
     <ImageButton
         android:id="@+id/btnEmail"

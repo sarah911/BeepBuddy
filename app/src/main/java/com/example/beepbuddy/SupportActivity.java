@@ -22,7 +22,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
     Button btnCall;
     Button btnEmail;
 
-    @SuppressLint("WrongViewCast")
+ //   @SuppressLint("WrongViewCast")
  //   @Nullable
  //   @Override
     protected void onCreate(Bundle savedInstanceState) {
