@@ -94,7 +94,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);
         receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
         receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
-        receiptIntent.putExtra("EXTRA_CAR_PLATE", hostSuite);
+        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
         receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
         startActivity(receiptIntent);
     }

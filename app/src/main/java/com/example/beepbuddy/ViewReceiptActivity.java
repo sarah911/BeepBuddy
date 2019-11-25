@@ -22,6 +22,10 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
     
+    String buildingCode;
+    String carPlate;
+    String hostSuite;
+    
     UserViewModel userViewModel;
 
     @Override
@@ -31,29 +35,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
         this.fetchFromDB();
-
-    }
-
-    private void fetchFromDB() {
-        final String buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
-        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
-        final String parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
-        
-        userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> allUsers) {
-                for(User user : allUsers){
-                    //if(user.getPlateNumber().equals(carPlate)){
-                        tv1BuildingCode.setText(buildingCode.toString());
-                        tv1CarPlateNumber.setText(carPlate.toString());
-                        tv1HostSuite.setText(hostSuite.toString());
-                        tv1ParkingDuration.setText(parkingDuration);
-                        //TODO add date, time,and charges.
-                    //}
-                }
-            }
-        });
 
     }
 
@@ -67,4 +48,32 @@ public class ViewReceiptActivity extends AppCompatActivity {
         tv1HostSuite = findViewById(R.id.tvHostSuite);
         tv1ParkingCost = findViewById(R.id.tvParkingCost);
     }
+    
+    private void fetchFromDB() {
+        buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+        carPlate = getIntent().getStringExtra("EXTRA_CAR_PLATE");
+        hostSuite = getIntent().getStringExtra("EXTRA_HOST_SUITE");
+        //buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+//        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
+//        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+//        final String parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
+//        
+        userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> allUsers) {
+                for(User user : allUsers){
+                    //if(user.getPlateNumber().equals(carPlate)){
+                        tv1BuildingCode.setText(buildingCode);
+                        tv1CarPlateNumber.setText(carPlate);
+                        tv1HostSuite.setText(hostSuite);
+                        //tv1ParkingDuration.setText(parkingDuration);
+                        //TODO add date, time,and charges.
+                    //}
+                }
+            }
+        });
+
+    }
+
+    
 }
