@@ -141,6 +141,10 @@ public class User {
         this.id = id;
     }
 
+
+    public void calculateParkingCharges(){
+
+    }
     @Override
     public String toString(){
         return "User{" +
