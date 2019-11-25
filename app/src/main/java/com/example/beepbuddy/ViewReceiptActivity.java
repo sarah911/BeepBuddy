@@ -40,12 +40,12 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     private void referWidgets() {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
-        tv1Date = findViewById(R.id.tvDate);
-        tv1Time = findViewById(R.id.tvParking);
+        tv1Date = findViewById(R.id.tv1Date);
+        tv1Time = findViewById(R.id.tv1Parking);
         tv1ParkingDuration = findViewById(R.id.tv1ParkingDuration);
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
-        tv1HostSuite = findViewById(R.id.tvHostSuite);
+        tv1HostSuite = findViewById(R.id.tv1HostSuite);
         tv1ParkingCost = findViewById(R.id.tvParkingCost);
     }
     
