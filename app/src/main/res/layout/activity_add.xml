@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/parkingDuration"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtBuildingCode" />
@@ -44,27 +44,17 @@
         android:layout_marginTop="16dp"
         android:text="@string/carPlate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnDuration" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDuration" />
 
     <TextView
         android:id="@+id/tvHostSuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/suiteNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtCarPlate" />
-
-    <Spinner
-        android:id="@+id/spnDuration"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvDuration"
-        app:layout_constraintTop_toBottomOf="@+id/edtBuildingCode" />
 
     <EditText
         android:id="@+id/edtBuildingCode"
@@ -82,25 +72,48 @@
         android:id="@+id/edtCarPlate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/carPlate"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toEndOf="@+id/tvCarPlate"
-        app:layout_constraintTop_toBottomOf="@+id/spnDuration" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDuration" />
 
     <EditText
-        android:id="@+id/edtHostSuit"
+        android:id="@+id/edtHostSuite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/suiteNumber"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toEndOf="@+id/tvHostSuit"
         app:layout_constraintTop_toBottomOf="@+id/edtCarPlate" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculateCost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtHostSuite" />
+
+    <EditText
+        android:id="@+id/edtDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDuration"
+        app:layout_constraintTop_toBottomOf="@+id/edtBuildingCode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

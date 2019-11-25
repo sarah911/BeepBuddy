@@ -28,9 +28,10 @@
     <string name="date">Date of Parking</string>
     <string name="time">Time of Parking</string>
     <string name="parkingCost">Parking Cost</string>
-    <string name="one">1 hour less</string>
-    <string name="three">Upto 3 hours</string>
-    <string name="ten">Upto 10 hours</string>
+    <string name="calculateCost">Calculate Parking Cost</string>
+    <string name="one">1 hour or less</string>
+    <string name="three">Up to 3 hours</string>
+    <string name="ten">Up to 10 hours</string>
     <string name="max">Maximum, Upto 24 hours</string>
     <string name="call">Contect Us By Calling</string>
     <string name="supportTitle">Support Center</string>
