@@ -38,9 +38,11 @@ public class User {
 
     private String paymentType;
 
+    private String cardNumber;
+
     public User(String firstName, String lastName, String email, String password,
                 String plateNumber, String cardName, String expDate,String phoneNumber,
-                String cvv, String paymentType) {
+                String cvv, String paymentType, String cardNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -51,6 +53,7 @@ public class User {
         this.expDate = expDate;
         this.cvv = cvv;
         this.paymentType = paymentType;
+        this.cardNumber = cardNumber;
     }
 
     public String getFirstName() {
@@ -133,6 +136,10 @@ public class User {
         this.paymentType = paymentType;
     }
 
+    public String getCardNumber() { return cardNumber; }
+
+    public void setCardNumber(String cardNumber) { this.cardNumber = cardNumber; }
+
     public int getId() {
         return id;
     }
@@ -158,6 +165,7 @@ public class User {
                 ", cardName'" + cardName + '\'' +
                 ", paymentType='" + paymentType + '\'' +
                 ", cvv='" + cvv + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
                 ", expDate=" + expDate +
                 '}';
     }

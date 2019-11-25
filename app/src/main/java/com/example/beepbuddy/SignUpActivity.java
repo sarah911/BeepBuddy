@@ -37,9 +37,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     String cvv;
     String carPlate;
     String expDate;
+    String cardNumber;
 
 
-
+    EditText edtCardNumber;
     EditText edtFirstName;
     EditText edtLastName;
     EditText edtPhone;
@@ -86,6 +87,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtPlate = findViewById(R.id.edt_plate);
         spnMonth = findViewById(R.id.spnMonth);
         spnYear = findViewById(R.id.spnYear);
+        edtCardName = findViewById(R.id.edt_card_number);
 
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
         spnMonth.setAdapter(monthAdapter);
@@ -127,13 +129,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         paymentType = rdoSelected.getText().toString();
         carPlate = edtPlate.getText().toString();
         expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
+        cardNumber = edtCardNumber.getText().toString();
 
-        User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType);
+        User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType, cardNumber);
         Log.d("SignUpActivity", newUser.toString());
 
         //reply to previous intent
         Intent replyIntent = new Intent();
-        //TODO FIX THIS replyIntent.putExtra(EXTRA_REPLY, newUser);
+        //TODO FIXXXX replyIntent.putExtra(EXTRA_REPLY, newUser);
         setResult(RESULT_OK, replyIntent);
         finish();
     }
