@@ -38,6 +38,9 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
         btnEmail = findViewById(R.id.btnEmail);
         btnEmail.setOnClickListener(this);
 
+        String [] permissions = new String[]{Manifest.permission.CALL_PHONE};
+        ActivityCompat.requestPermissions(SupportActivity.this, permissions, 1);
+
     }
 
     @Override
@@ -64,7 +67,11 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-        startActivity(callIntent);
+        Log.e("SupportActivity","Calling");
+
+                startActivity(callIntent);
+
+        Log.e("SupportActivity","not Calling");
 
     }
 
