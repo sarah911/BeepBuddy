@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.beepbuddy.model.User;
+import com.example.beepbuddy.viewmodel.UserViewModel;
+
 public class ViewReceiptActivity extends AppCompatActivity {
 
     TextView tv1CarPlateNumber;
@@ -14,13 +17,20 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1BuildingCode;
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
+    
+    UserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_receipt);
         this.referWidgets();
+        userViewModel = new UserViewModel(getApplication());
+        this.fetchFromDB();
 
+    }
+
+    private void fetchFromDB() {
     }
 
     private void referWidgets() {
