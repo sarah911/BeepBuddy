@@ -53,8 +53,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
 
-
-
     }
 
 

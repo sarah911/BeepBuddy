@@ -1,12 +1,16 @@
 package com.example.beepbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
+import com.example.beepbuddy.model.User;
+
+import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
 
@@ -31,6 +35,26 @@ public class ViewReceiptActivity extends AppCompatActivity {
     }
 
     private void fetchFromDB() {
+        final String buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
+        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+        final String parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
+        
+        userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> allUsers) {
+                for(User user : allUsers){
+                    if(user.getPlateNumber().equals(carPlate)){
+                        tv1BuildingCode.setText(buildingCode);
+                        tv1CarPlateNumber.setText(carPlate);
+                        tv1HostSuite.setText(hostSuite);
+                        tv1ParkingDuration.setText(parkingDuration);
+                        //TODO add date, time,and charges.
+                    }
+                }
+            }
+        });
+
     }
 
     private void referWidgets() {
