@@ -1,21 +1,16 @@
 package com.example.beepbuddy;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class SupportActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,13 +18,10 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
     ImageButton btnCall;
     ImageButton btnEmail;
 
- //   @SuppressLint("WrongViewCast")
- //   @Nullable
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        View root = inflater.inflate(R.layout.activity_support, container, false);
         setContentView(R.layout.activity_support);
 
         btnCall = findViewById(R.id.btnCall);

@@ -77,18 +77,18 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             case R.id.btnCalculate:
                 this.getValues();
                 this.openViewReceiptActivity();
-                this.saveToDB();
+                //this.saveToDB();
         }
 
     }
 
-    private void saveToDB() {
-        User newUser = new User(null, null, null, null, carPlate,
-                null, null, null, null, null);
-        newUser.calculateParkingCharges();
-        Log.e("AddActivity", newUser.toString());
-        userViewModel.insert(newUser);
-    }
+//    private void saveToDB() {
+//        User newUser = new User(null, null, null, null, carPlate,
+//                null, null, null, null, null);
+//        newUser.calculateParkingCharges();
+//        Log.e("AddActivity", newUser.toString());
+//        userViewModel.insert(newUser);
+//    }
 
     private void openViewReceiptActivity() {
         Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);

@@ -244,10 +244,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/edt_cvv"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/spnYear"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/edt_cardName" />
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
 
     <Spinner
         android:id="@+id/spnYear"
@@ -257,10 +257,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/edt_cvv"
+        app:layout_constraintBottom_toBottomOf="@+id/spnMonth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spnMonth"
-        app:layout_constraintTop_toBottomOf="@+id/edt_cardName" />
+        app:layout_constraintTop_toTopOf="@+id/spnMonth" />
 
     <EditText
         android:id="@+id/edt_card_number"
@@ -273,10 +273,10 @@
         android:ems="10"
         android:hint="@string/cardnumber"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/spnMonth"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_cardName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edt_cardName"
-        app:layout_constraintTop_toBottomOf="@+id/rdgPayment" />
+        app:layout_constraintTop_toTopOf="@+id/edt_cardName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
