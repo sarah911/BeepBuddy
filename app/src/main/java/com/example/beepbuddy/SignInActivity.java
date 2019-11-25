@@ -65,7 +65,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     void referWidgets(){
         edtEmail= findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
-        btnSignIn = findViewById(R.id.btn_submit);
+        btnSignIn = findViewById(R.id.btnSignIn);
         btnSignIn.setOnClickListener(this);
 
         txtSignUp = findViewById(R.id.txtSignUp);
