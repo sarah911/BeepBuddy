@@ -1,12 +1,18 @@
 package com.example.beepbuddy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.net.Inet4Address;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 //TODO
                 break;
             case R.id.item_profile:
-                //TODO
+                //this.editProfile();
                 break;
             case R.id.item_manual:
-                //TODO
+                Intent intentM = new Intent(this, WebActivity.class);
+                this.startActivity(intentM);
                 break;
             case R.id.item_support:
                 Intent intentS = new Intent(this, SupportActivity.class);
@@ -57,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
+//void editProfile(){
+//    LayoutInflater inflater = getLayoutInflater();
+//    final View dialogView = new AlertDialog.Builder(this)
+//            .setTitle("Edit Profile")
+//            .setMessage("Please update profile details")
+//            .setPositiveButton("Update", )
+//}
 
 }
