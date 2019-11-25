@@ -41,6 +41,10 @@
     <string name="appManual">Beep Buddy Manual</string>
     <string name="support">Customer Support</string>
     <string name="signOut">Sign Out</string>
+    <string name="btnEmail">Contect Us By Email</string>
+    <string name="logoImageSupp">logo of support page</string>
+    <string name="btncall">Call button</string>
+    <string name="buttonEmail">button of Email</string>
     <string-array name="duration_array">
         <item>@string/one</item>
         <item>@string/three</item>
