@@ -35,7 +35,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
     Button btnCalculate;
 
-    Spinner spnDuration;
+    //Spinner spnDuration;
 
     String buildingCode;
     String carPlate;
@@ -68,8 +68,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         btnCalculate = findViewById(R.id.btnCalculate);
         btnCalculate.setOnClickListener(this);
 
-        ArrayAdapter durationAdapter = ArrayAdapter.createFromResource(this, R.array.duration_array, android.R.layout.simple_spinner_dropdown_item);
-        spnDuration.setAdapter(durationAdapter);
+        //ArrayAdapter durationAdapter = ArrayAdapter.createFromResource(this, R.array.duration_array, android.R.layout.simple_spinner_dropdown_item);
+        //spnDuration.setAdapter(durationAdapter);
     }
 
     @Override
