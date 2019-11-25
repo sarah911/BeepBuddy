@@ -136,7 +136,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         //reply to previous intent
         Intent replyIntent = new Intent();
-        //TODO FIXXXX replyIntent.putExtra(EXTRA_REPLY, newUser);
+        replyIntent.putExtra(EXTRA_REPLY, newUser);
         setResult(RESULT_OK, replyIntent);
         finish();
     }
