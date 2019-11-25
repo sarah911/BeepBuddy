@@ -32,13 +32,8 @@
     <string name="three">Upto 3 hours</string>
     <string name="ten">Upto 10 hours</string>
     <string name="max">Maximum, Upto 24 hours</string>
-    <string name="addParking">Add Parking</string>
-    <string name="viewReceipts">View Parking Receipts</string>
-    <string name="searchParking">Search Nearby Parking</string>
-    <string name="updateProfile">Update User Profile</string>
-    <string name="appManual">Beep Buddy Manual</string>
-    <string name="support">Customer Support</string>
-    <string name="signOut">Sign Out</string>
+    <string name="call">Contect Us By Calling</string>
+    <string name="supportTitle">Support Center</string>
     <string-array name="duration_array">
         <item>@string/one</item>
         <item>@string/three</item>
