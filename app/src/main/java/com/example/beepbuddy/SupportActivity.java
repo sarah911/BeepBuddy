@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,18 +22,19 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
     Button btnCall;
     Button btnEmail;
 
-    @Nullable
+    @SuppressLint("WrongViewCast")
+ //   @Nullable
  //   @Override
-    protected void onCreate(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        //super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        View root = inflater.inflate(R.layout.activity_support, container, false);
-        //setContentView(R.layout.activity_support);
+//        View root = inflater.inflate(R.layout.activity_support, container, false);
+        setContentView(R.layout.activity_support);
 
-        btnCall = root.findViewById(R.id.btnCall);
+        btnCall = findViewById(R.id.btnCall);
         btnCall.setOnClickListener(this);
 
-        btnEmail = root.findViewById(R.id.btnEmail);
+        btnEmail = findViewById(R.id.btnEmail);
         btnEmail.setOnClickListener(this);
 
     }
@@ -57,7 +59,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
 
         if(ActivityCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-            Log.e("SupportFragment", "Call permission not granted");
+            Log.e("SupportActivity", "Call permission not granted");
             return;
         }
 
