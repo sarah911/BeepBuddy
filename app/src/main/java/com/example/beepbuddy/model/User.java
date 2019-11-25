@@ -1,5 +1,6 @@
 package com.example.beepbuddy.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,7 @@ import androidx.room.PrimaryKey;
  * on 2019-11-24
  */
 @Entity(tableName = "user_table")
-public class User {
+public class User implements Serializable {
 
     @PrimaryKey
     @NonNull
