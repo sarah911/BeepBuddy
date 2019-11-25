@@ -62,6 +62,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         this.getRememberedData();
     }
 
+
+
     void referWidgets(){
         edtEmail= findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
