@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
-        android:contentDescription="@string/btncall"
+        android:contentDescription="@string/btnCall"
         app:layout_constraintEnd_toEndOf="@+id/imgLogoSup"
         app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="@+id/imgLogoSup"
