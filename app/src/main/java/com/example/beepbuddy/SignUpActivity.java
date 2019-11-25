@@ -126,13 +126,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         rdoSelected = findViewById(rdoPayment.getCheckedRadioButtonId());
         paymentType = rdoSelected.getText().toString();
         carPlate = edtPlate.getText().toString();
+        expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
 
-        //User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType);
-        //Log.d("SignUpActivity", newUser.toString());
+        User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType);
+        Log.d("SignUpActivity", newUser.toString());
 
         //reply to previous intent
         Intent replyIntent = new Intent();
-        //replyIntent.putExtra(EXTRA_REPLY, newUser);
+        //TODO FIX THIS replyIntent.putExtra(EXTRA_REPLY, newUser);
         setResult(RESULT_OK, replyIntent);
         finish();
     }

@@ -32,14 +32,14 @@ public class User {
 
     private String cardName;
 
-    private Date expDate;
+    private String expDate;
 
     private String cvv;
 
     private String paymentType;
 
     public User(String firstName, String lastName, String email, String password,
-                String plateNumber, String cardName, Date expDate,String phoneNumber,
+                String plateNumber, String cardName, String expDate,String phoneNumber,
                 String cvv, String paymentType) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -109,11 +109,11 @@ public class User {
         this.cardName = cardName;
     }
 
-    public Date getExpDate() {
+    public String getExpDate() {
         return expDate;
     }
 
-    public void setExpDate(Date expDate) {
+    public void setExpDate(String expDate) {
         this.expDate = expDate;
     }
 
