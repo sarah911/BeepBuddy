@@ -53,6 +53,51 @@
         <item>@string/max</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="mm">MM</string>
+    <string name="yy">YY</string>
+    <string name="jan">01</string>
+    <string name="feb">02</string>
+    <string name="mar">03</string>
+    <string name="apr">04</string>
+    <string name="may">05</string>
+    <string name="jun">06</string>
+    <string name="jul">07</string>
+    <string name="aug">08</string>
+    <string name="sep">09</string>
+    <string name="oct">10</string>
+    <string name="nov">11</string>
+    <string name="dec">12</string>
+    <string-array name="month_array">
+    <item>@string/jan</item>
+    <item>@string/feb</item>
+    <item>@string/mar</item>
+    <item>@string/apr</item>
+    <item>@string/may</item>
+    <item>@string/jun</item>
+    <item>@string/jul</item>
+    <item>@string/aug</item>
+    <item>@string/sep</item>
+    <item>@string/oct</item>
+    <item>@string/nov</item>
+    <item>@string/dec</item>
+    </string-array>
+
+    <string name="nineteen">2019</string>
+    <string name="twenty">2020</string>
+    <string name="twentyone">2021</string>
+    <string name="twentytwo">2022</string>
+    <string name="twentythree">2023</string>
+    <string name="twentyfour">2024</string>
+    <string name="twentyfive">2025</string>
+    <string-array name="year_array">
+        <item>@string/nineteen</item>
+        <item>@string/twenty</item>
+        <item>@string/twentyone</item>
+        <item>@string/twentytwo</item>
+        <item>@string/twentythree</item>
+        <item>@string/twentyfour</item>
+        <item>@string/twentyfive</item>
+    </string-array>
 
 
 </resources>

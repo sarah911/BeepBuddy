@@ -9,14 +9,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.example.beepbuddy.model.User;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,7 +36,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     String cardName;
     String cvv;
     String carPlate;
-    Date expDate;
+    String expDate;
+
 
 
     EditText edtFirstName;
@@ -47,10 +51,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     EditText edtCardName;
     EditText edtPlate;
 
+    Spinner spnMonth;
+    Spinner spnYear;
+
+
     RadioGroup rdoPayment;
     RadioButton rdoSelected;
     Button btnSubmit;
     Button btnCancel;
+
+
 
     public static final String EXTRA_REPLY = "com.example.beepbuddy.REPLY";
 
@@ -74,6 +84,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtCVV = findViewById(R.id.edt_cvv);
         edtCardName = findViewById(R.id.edt_cardName);
         edtPlate = findViewById(R.id.edt_plate);
+        spnMonth = findViewById(R.id.spnMonth);
+        spnYear = findViewById(R.id.spnYear);
+
+        ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
+        spnMonth.setAdapter(monthAdapter);
+
+        ArrayAdapter yearAdapter = ArrayAdapter.createFromResource(this, R.array.year_array, android.R.layout.simple_spinner_dropdown_item);
+        spnYear.setAdapter(yearAdapter);
 
         rdoPayment = findViewById(R.id.rdgPayment);
 
@@ -82,9 +100,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnCancel = findViewById(R.id.btn_cancel);
         btnCancel.setOnClickListener(this);
 
-        edtExpDate = findViewById(R.id.edt_expDate);
-        edtExpDate.setFocusable(false); //disable editing
-        edtExpDate.setOnClickListener(this);
 
     }
 
@@ -96,44 +111,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     this.createUserAndReply();
                 }
                 break;
-            case R.id.edt_expDate:
-                this.chooseDate();
-                break;
             case R.id.btn_cancel:
                 this.openSignInActivity();
         }
 
-    }
-
-    private void chooseDate() {
-        final Calendar calendar = Calendar.getInstance();
-        final int month = calendar.get(Calendar.MONTH);
-        final int year = calendar.get(Calendar.YEAR);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePicker =
-                new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int month, int year, int day) {
-                        @SuppressLint("SimpleDateFormat")
-                        SimpleDateFormat sdf = new SimpleDateFormat("MM-YY");
-                        calendar.set(month, year);
-                        expDate = calendar.getTime();
-                        String dateString = sdf.format(calendar.getTime());
-
-                        edtExpDate.setText(dateString); //to set the date
-                    }
-
-                }, month, year, day); //set date picker to current date
-        datePicker.getDatePicker().setMaxDate(new Date().getTime());
-
-        datePicker.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialogInterface) {
-                dialogInterface.dismiss();
-            }
-        });
-        datePicker.show();
     }
 
     private void createUserAndReply(){
@@ -146,8 +127,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         paymentType = rdoSelected.getText().toString();
         carPlate = edtPlate.getText().toString();
 
-        User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType);
-        Log.d("SignUpActivity", newUser.toString());
+        //User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType);
+        //Log.d("SignUpActivity", newUser.toString());
 
         //reply to previous intent
         Intent replyIntent = new Intent();
