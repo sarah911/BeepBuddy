@@ -44,13 +44,13 @@ public class ViewReceiptActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<User> allUsers) {
                 for(User user : allUsers){
-                    if(user.getPlateNumber().equals(carPlate)){
-                        tv1BuildingCode.setText(buildingCode);
-                        tv1CarPlateNumber.setText(carPlate);
-                        tv1HostSuite.setText(hostSuite);
+                    //if(user.getPlateNumber().equals(carPlate)){
+                        tv1BuildingCode.setText(buildingCode.toString());
+                        tv1CarPlateNumber.setText(carPlate.toString());
+                        tv1HostSuite.setText(hostSuite.toString());
                         tv1ParkingDuration.setText(parkingDuration);
                         //TODO add date, time,and charges.
-                    }
+                    //}
                 }
             }
         });
