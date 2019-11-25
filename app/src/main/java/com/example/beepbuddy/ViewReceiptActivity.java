@@ -16,7 +16,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     TextView tv1CarPlateNumber;
     TextView tv1Date;
-    TextView tv1Parking;
+    TextView tv1Time;
     TextView tv1ParkingDuration;
     TextView tv1BuildingCode;
     TextView tv1HostSuite;
@@ -41,7 +41,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
     private void referWidgets() {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1Date = findViewById(R.id.tvDate);
-        tv1Parking = findViewById(R.id.tvParking);
+        tv1Time = findViewById(R.id.tvParking);
         tv1ParkingDuration = findViewById(R.id.tv1ParkingDuration);
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
@@ -50,9 +50,9 @@ public class ViewReceiptActivity extends AppCompatActivity {
     }
     
     private void fetchFromDB() {
-        buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-        carPlate = getIntent().getStringExtra("EXTRA_CAR_PLATE");
-        hostSuite = getIntent().getStringExtra("EXTRA_HOST_SUITE");
+          buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+          carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
+          hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
         //buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
 //        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
 //        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");

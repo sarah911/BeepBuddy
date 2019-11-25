@@ -84,7 +84,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
     private void saveToDB() {
         User newUser = new User(null, null, null, null, carPlate,
-                null, null, null, null, null);
+                null, null, null, null, null, null);
         newUser.calculateParkingCharges();
         Log.e("AddActivity", newUser.toString());
         userViewModel.insert(newUser);
