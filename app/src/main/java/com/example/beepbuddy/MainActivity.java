@@ -79,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         EditText editFN = dialogView.findViewById(R.id.editFN);
                         EditText editLN = dialogView.findViewById(R.id.editLN);
+                        EditText editPhone = dialogView.findViewById(R.id.edit_phone);
+                        EditText editEmail = dialogView.findViewById(R.id.edit_email);
+                        EditText editPass = dialogView.findViewById(R.id.edit_password);
+
+                        //TODO other fields and add to the xml as well
+                        //TODO how to update this to the user ?
 
 
                     }
