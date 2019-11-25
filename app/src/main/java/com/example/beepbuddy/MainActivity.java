@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 //TODO
                 break;
             case R.id.item_search:
-                //TODO
+                Intent intentI = new Intent(this, MapsActivity.class);
+                this.startActivity(intentI);
                 break;
             case R.id.item_profile:
                 this.editProfile();
