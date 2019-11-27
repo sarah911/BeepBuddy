@@ -127,7 +127,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     void openMainActivity(){
-        Intent mainIntent = new Intent(SignInActivity.this, AddActivity.class);
+        Intent mainIntent = new Intent(SignInActivity.this, MainActivity.class);
         startActivity(mainIntent);
     }
 
