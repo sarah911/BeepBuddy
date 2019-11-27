@@ -159,10 +159,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             allValidations = false;
         }
 
-        if(edtExpDate.getText().toString().isEmpty()){
-            edtExpDate.setError("Please select expiry date");
-            allValidations = false;
-        }
 
         if (edtEmail.getText().toString().isEmpty()){
             edtEmail.setError("Email cannot be empty");
