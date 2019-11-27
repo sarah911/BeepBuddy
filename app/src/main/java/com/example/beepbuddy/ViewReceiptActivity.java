@@ -25,6 +25,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String buildingCode;
     String carPlate;
     String hostSuite;
+    String parkingAmount;
+    Integer parkingCharges;
     
     UserViewModel userViewModel;
 
@@ -53,6 +55,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
           buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
           carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
           hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+          parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
+
         //buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
 //        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
 //        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
@@ -66,6 +70,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
                         tv1BuildingCode.setText(buildingCode);
                         tv1CarPlateNumber.setText(carPlate);
                         tv1HostSuite.setText(hostSuite);
+                        tv1ParkingCost.setText(parkingCharges);
                         //tv1ParkingDuration.setText(parkingDuration);
                         //TODO add date, time,and charges.
                     //}

@@ -40,7 +40,10 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     String buildingCode;
     String carPlate;
     String hostSuite;
+    String parkingAmount;
     Integer parkingDuration;
+
+    Integer parkingCharges;
 
     UserViewModel userViewModel;
 
@@ -52,6 +55,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
+        calculateParkingCharges();
+        //calculateAmount();
     }
 
 
@@ -85,18 +90,10 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private void saveToDB() {
         User newUser = new User(null, null, null, null, carPlate,
                 null, null, null, null, null, null);
-        newUser.calculateParkingCharges();
+       // newUser.calculateParkingCharges();
+//        calculateParkingCharges();
         Log.e("AddActivity", newUser.toString());
         userViewModel.insert(newUser);
-    }
-
-    private void openViewReceiptActivity() {
-        Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);
-        receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
-        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
-        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
-        startActivity(receiptIntent);
     }
 
     private void getValues() {
@@ -108,6 +105,34 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 //        rdbSelected = findViewById(rdgDuration.getCheckedRadioButtonId());
 
     }
+    public void calculateParkingCharges(){
+        if(this.parkingDuration <= 1){
+            parkingCharges = 4;
+        } if (this.parkingDuration <= 3){
+            parkingCharges = 8;
+        } if (this.parkingDuration <= 10){
+            parkingCharges = 12;
+        } else {
+            parkingCharges = 20;
+        }
+
+        this.calculateAmount();
+    }
+
+    private void calculateAmount() {
+        parkingAmount = "$" + parkingCharges;
+    }
+
+    private void openViewReceiptActivity() {
+        Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);
+        receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
+        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
+        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
+        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+        startActivity(receiptIntent);
+    }
+
+
 
     private void getAllUsers(){
         userViewModel.getAllUsers().observe(AddActivity.this, new Observer<List<User>>() {
