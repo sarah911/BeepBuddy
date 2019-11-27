@@ -10,9 +10,11 @@
         android:id="@+id/tvHeading2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:text="@string/heading1"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,10 +22,12 @@
         android:id="@+id/tvBuildingCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
         android:text="@string/buildingCode"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvDuration"
+        app:layout_constraintStart_toStartOf="@+id/tvDuration"
         app:layout_constraintTop_toBottomOf="@+id/tvHeading2" />
 
     <TextView
@@ -33,7 +37,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/parkingDuration"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCarPlate"
+        app:layout_constraintStart_toStartOf="@+id/tvCarPlate"
         app:layout_constraintTop_toBottomOf="@+id/edtBuildingCode" />
 
     <TextView
@@ -43,16 +49,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/carPlate"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvHostSuit"
+        app:layout_constraintStart_toStartOf="@+id/tvHostSuit"
         app:layout_constraintTop_toBottomOf="@+id/edtDuration" />
 
     <TextView
         android:id="@+id/tvHostSuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/suiteNumber"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtCarPlate" />
 
@@ -60,13 +69,48 @@
         android:id="@+id/edtBuildingCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/buildingCode"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBuildingCode"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/tvBuildingCode"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeading2" />
+        app:layout_constraintTop_toTopOf="@+id/tvBuildingCode"
+        app:layout_constraintVertical_bias="0.706" />
+
+    <EditText
+        android:id="@+id/edtDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDuration"
+        app:layout_constraintEnd_toEndOf="@+id/edtBuildingCode"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvDuration"
+        app:layout_constraintStart_toStartOf="@+id/edtBuildingCode"
+        app:layout_constraintTop_toTopOf="@+id/tvDuration" />
+
+    <EditText
+        android:id="@+id/edtHostSuite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/suiteNumber"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHostSuit"
+        app:layout_constraintEnd_toEndOf="@+id/edtCarPlate"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/tvHostSuit"
+        app:layout_constraintStart_toStartOf="@+id/edtCarPlate"
+        app:layout_constraintTop_toTopOf="@+id/tvHostSuit"
+        app:layout_constraintVertical_bias="0.38" />
 
     <EditText
         android:id="@+id/edtCarPlate"
@@ -76,24 +120,12 @@
         android:ems="10"
         android:hint="@string/carPlate"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCarPlate"
+        app:layout_constraintEnd_toEndOf="@+id/edtDuration"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvCarPlate"
-        app:layout_constraintTop_toBottomOf="@+id/edtDuration" />
-
-    <EditText
-        android:id="@+id/edtHostSuite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/suiteNumber"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toEndOf="@+id/tvHostSuit"
-        app:layout_constraintTop_toBottomOf="@+id/edtCarPlate" />
+        app:layout_constraintStart_toStartOf="@+id/edtDuration"
+        app:layout_constraintTop_toTopOf="@+id/tvCarPlate" />
 
     <Button
         android:id="@+id/btnCalculate"
@@ -104,16 +136,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtHostSuite" />
-
-    <EditText
-        android:id="@+id/edtDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvDuration"
-        app:layout_constraintTop_toBottomOf="@+id/edtBuildingCode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
