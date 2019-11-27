@@ -41,9 +41,9 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     String carPlate;
     String hostSuite;
     String parkingAmount;
-    Integer parkingDuration;
+    Integer parkingDuration = 0;
 
-    Integer parkingCharges;
+    String parkingCharges;
 
     UserViewModel userViewModel;
 
@@ -107,13 +107,13 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     }
     public void calculateParkingCharges(){
         if(this.parkingDuration <= 1){
-            parkingCharges = 4;
+            parkingCharges = "4";
         } if (this.parkingDuration <= 3){
-            parkingCharges = 8;
+            parkingCharges = "8";
         } if (this.parkingDuration <= 10){
-            parkingCharges = 12;
+            parkingCharges = "12";
         } else {
-            parkingCharges = 20;
+            parkingCharges = "20";
         }
 
         this.calculateAmount();
