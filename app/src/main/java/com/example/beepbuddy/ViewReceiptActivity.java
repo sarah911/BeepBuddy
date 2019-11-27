@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
-import com.example.beepbuddy.model.User;
 
 import java.util.List;
 
@@ -25,6 +24,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String buildingCode;
     String carPlate;
     String hostSuite;
+    String parkingAmount;
+
     
     UserViewModel userViewModel;
 
@@ -41,23 +42,21 @@ public class ViewReceiptActivity extends AppCompatActivity {
     private void referWidgets() {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1Date = findViewById(R.id.tv1Date);
-        tv1Time = findViewById(R.id.tv1Parking);
+        tv1Time = findViewById(R.id.tv1Time);
         tv1ParkingDuration = findViewById(R.id.tv1ParkingDuration);
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
-        tv1ParkingCost = findViewById(R.id.tvParkingCost);
+        tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
     }
     
     private void fetchFromDB() {
-          buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-          carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
-          hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
-        //buildingCode = getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-//        final String carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
-//        final String hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
-//        final String parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
-//        
+        buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+        carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
+        hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+        parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
+
+
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> allUsers) {
@@ -66,8 +65,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
                         tv1BuildingCode.setText(buildingCode);
                         tv1CarPlateNumber.setText(carPlate);
                         tv1HostSuite.setText(hostSuite);
-                        //tv1ParkingDuration.setText(parkingDuration);
-                        //TODO add date, time,and charges.
+                    tv1ParkingCost.setText(parkingAmount);
+
                     //}
                 }
             }

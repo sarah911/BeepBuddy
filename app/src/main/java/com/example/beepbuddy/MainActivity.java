@@ -12,16 +12,26 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.net.Inet4Address;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button btnMainSearch;
+    Button btnMainPark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnMainPark = findViewById(R.id.btn2Park);
+        btnMainPark.setOnClickListener(this);
+
+        btnMainSearch = findViewById(R.id.btn2Search);
+        btnMainSearch.setOnClickListener(this);
     }
 
     @Override
@@ -35,15 +45,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.item_add:
-                Intent intent = new Intent(this, AddActivity.class);
-                this.startActivity(intent);
+                this.openAddParking();
                 break;
             case R.id.item_receipts:
-                //TODO
+                //TODO add page for receipt lists
                 break;
             case R.id.item_search:
-                Intent intentI = new Intent(this, MapsActivity.class);
-                this.startActivity(intentI);
+                this.openSearchParking();
                 break;
             case R.id.item_profile:
                 this.editProfile();
@@ -83,8 +91,13 @@ public class MainActivity extends AppCompatActivity {
                         EditText editPhone = dialogView.findViewById(R.id.edit_phone);
                         EditText editEmail = dialogView.findViewById(R.id.edit_email);
                         EditText editPass = dialogView.findViewById(R.id.edit_password);
+                        EditText editPlate = dialogView.findViewById(R.id.edit_plate);
+                        EditText editCardName = dialogView.findViewById(R.id.edit_card_name);
+                        EditText editCardNum = dialogView.findViewById(R.id.edit_card_number);
+                        EditText editCVV = dialogView.findViewById(R.id.edit_cvv);
 
-                        //TODO other fields and add to the xml as well
+                        //TODO add spinner fields for expiry date
+
                         //TODO how to update this to the user ?
 
 
@@ -95,4 +108,24 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn2Park:
+                this.openAddParking();
+                break;
+            case R.id.btn2Search:
+                this.openSearchParking();
+                break;
+        }
+    }
+
+    void openAddParking(){
+        Intent intent = new Intent(this, AddActivity.class);
+        this.startActivity(intent);
+    }
+    void openSearchParking(){
+        Intent intentI = new Intent(this, MapsActivity.class);
+        this.startActivity(intentI);
+    }
 }
