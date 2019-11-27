@@ -33,11 +33,10 @@ public class UserRepository {
     }
 
     private static class insertAsyncTask extends AsyncTask<User, Void, Void> {
-
         private UserDao asyncTaskDao;
 
         insertAsyncTask(UserDao userDao){
-            asyncTaskDao = userDao;
+            this.asyncTaskDao = userDao;
         }
 
         @Override
