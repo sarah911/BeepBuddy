@@ -29,11 +29,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String hostSuite;
     String parkingAmount;
 
-//    Calendar calendar;
-//    SimpleDateFormat dateFormat;
-//    String date;
-
-
     UserViewModel userViewModel;
 
     @Override
@@ -43,7 +38,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
         this.fetchFromDB();
-       // Calendar c = Calendar.getInstance();
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat mdformat = new SimpleDateFormat("EEE, MMM d, ''yy");
@@ -69,8 +63,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     private void referWidgets() {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
-        //tv1Date = findViewById(R.id.tv1Date);
-        //tv1Time = findViewById(R.id.tv1Time);
+
         tv1ParkingDuration = findViewById(R.id.tv1ParkingDuration);
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
@@ -83,11 +76,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
         hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
         parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
-//        dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-//        date = dateFormat.format(calendar.getTime());
 
-//        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-//        date = df.format(calendar.getTime());
 
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
@@ -98,7 +87,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
                     tv1CarPlateNumber.setText(carPlate);
                     tv1HostSuite.setText(hostSuite);
                     tv1ParkingCost.setText(parkingAmount);
-                    //tv1Date.setText(date);
 
                     //}
                 }
