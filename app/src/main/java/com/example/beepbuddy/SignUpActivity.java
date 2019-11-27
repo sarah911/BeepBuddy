@@ -196,6 +196,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             allValidations = false;
         }
 
+//        if(paymentType == null){
+//            rdoSelected.setError("You must select a payment type");
+//        }
+
         if (rdoSelected.getText().toString().isEmpty()){
             rdoSelected.setError("You must select a payment type");
             allValidations = false;

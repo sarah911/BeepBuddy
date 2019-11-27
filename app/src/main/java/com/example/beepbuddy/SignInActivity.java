@@ -31,7 +31,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     TextView txtForgetPass;
 
     String email;
-    String password;
+    String password ;
 
     public static final int SIGN_UP_REQUEST_CODE = 1;
     public static final String USER_PREF = "com.example.beepbuddy.userprefer";

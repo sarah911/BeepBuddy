@@ -30,20 +30,12 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     EditText edtHostSuite;
     EditText edtDuration;
 
-//    RadioGroup rdgDuration;
-//    RadioButton rdbSelected;
-
     Button btnCalculate;
-
-    //Spinner spnDuration;
 
     String buildingCode;
     String carPlate;
     String hostSuite;
-    String parkingAmount;
-    Integer parkingDuration = 0;
 
-    String parkingCharges;
 
     UserViewModel userViewModel;
 
@@ -55,8 +47,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
-        calculateParkingCharges();
-        //calculateAmount();
     }
 
 
@@ -67,13 +57,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         edtHostSuite = findViewById(R.id.edtHostSuite);
         edtDuration = findViewById(R.id.edtDuration);
 
-        //rdgDuration = findViewById(R.id.rdgDuration);
-
         btnCalculate = findViewById(R.id.btnCalculate);
         btnCalculate.setOnClickListener(this);
-
-        //ArrayAdapter durationAdapter = ArrayAdapter.createFromResource(this, R.array.duration_array, android.R.layout.simple_spinner_dropdown_item);
-        //spnDuration.setAdapter(durationAdapter);
     }
 
     @Override
@@ -90,8 +75,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private void saveToDB() {
         User newUser = new User(null, null, null, null, carPlate,
                 null, null, null, null, null, null);
-       // newUser.calculateParkingCharges();
-//        calculateParkingCharges();
+        newUser.calculateParkingCharges();
         Log.e("AddActivity", newUser.toString());
         userViewModel.insert(newUser);
     }
@@ -100,27 +84,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         buildingCode = edtBuildingCode.getText().toString();
         carPlate = edtCarPlate.getText().toString();
         hostSuite = edtHostSuite.getText().toString();
-        parkingDuration = Integer.parseInt(edtDuration.getText().toString());
+       // parkingDuration = Integer.parseInt(edtDuration.getText().toString());
 
-//        rdbSelected = findViewById(rdgDuration.getCheckedRadioButtonId());
-
-    }
-    public void calculateParkingCharges(){
-        if(this.parkingDuration <= 1){
-            parkingCharges = "4";
-        } if (this.parkingDuration <= 3){
-            parkingCharges = "8";
-        } if (this.parkingDuration <= 10){
-            parkingCharges = "12";
-        } else {
-            parkingCharges = "20";
-        }
-
-        this.calculateAmount();
-    }
-
-    private void calculateAmount() {
-        parkingAmount = "$" + parkingCharges;
     }
 
     private void openViewReceiptActivity() {
@@ -128,10 +93,9 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
         receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
         receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+        //receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
         startActivity(receiptIntent);
     }
-
 
 
     private void getAllUsers(){

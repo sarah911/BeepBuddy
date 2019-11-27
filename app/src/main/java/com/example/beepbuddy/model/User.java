@@ -150,9 +150,9 @@ public class User implements Serializable {
     }
 
 
-//    public void calculateParkingCharges(){
-//
-//    }
+    public void calculateParkingCharges(){
+
+    }
     @Override
     public String toString(){
         return "User{" +
