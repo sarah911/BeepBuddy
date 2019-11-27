@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -15,30 +16,42 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "user_table")
 public class User implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
+    @ColumnInfo(name="Id")
     private int id;
 
+    @ColumnInfo(name="firstName")
     private String firstName;
 
+    @ColumnInfo(name="lastName")
     private String lastName;
 
+    @ColumnInfo(name="email")
     private String email;
 
+    @ColumnInfo(name="password")
     private String password;
 
+    @ColumnInfo(name="phoneNumber")
     private String phoneNumber;
 
+    @ColumnInfo(name="plateNumber")
     private String plateNumber;
 
+    @ColumnInfo(name="cardName")
     private String cardName;
 
+    @ColumnInfo(name="expDate")
     private String expDate;
 
+    @ColumnInfo(name="cvv")
     private String cvv;
 
+    @ColumnInfo(name="paymentType")
     private String paymentType;
 
+    @ColumnInfo(name="cardNumber")
     private String cardNumber;
 
     public User(String firstName, String lastName, String email, String password,

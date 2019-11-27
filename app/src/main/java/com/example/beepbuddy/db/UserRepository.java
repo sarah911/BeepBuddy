@@ -36,7 +36,7 @@ public class UserRepository {
         private UserDao asyncTaskDao;
 
         insertAsyncTask(UserDao userDao){
-            this.asyncTaskDao = userDao;
+            asyncTaskDao = userDao;
         }
 
         @Override

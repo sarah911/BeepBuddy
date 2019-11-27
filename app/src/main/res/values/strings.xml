@@ -96,6 +96,7 @@
     <string name="park">Park</string>
     <string name="supportNum">Tel. 123-456-7890</string>
     <string name="supEmail">Email: beebbuddy@support.com</string>
+    <string name="supportIcon">icon for support page</string>
     <string-array name="year_array">
         <item>@string/nineteen</item>
         <item>@string/twenty</item>

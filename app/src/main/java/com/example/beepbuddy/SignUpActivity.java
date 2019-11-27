@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     Spinner spnYear;
 
 
-    RadioGroup rdoPayment;
+    RadioGroup rdgPayment;
     RadioButton rdoSelected;
     Button btnSubmit;
     Button btnCancel;
@@ -94,7 +94,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         ArrayAdapter yearAdapter = ArrayAdapter.createFromResource(this, R.array.year_array, android.R.layout.simple_spinner_dropdown_item);
         spnYear.setAdapter(yearAdapter);
 
-        rdoPayment = findViewById(R.id.rdgPayment);
+        //referring radio group
+        rdgPayment = findViewById(R.id.rdgPayment);
 
         btnSubmit = findViewById(R.id.btn_submit);
         btnSubmit.setOnClickListener(this);
@@ -124,8 +125,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         phoneNumber = edtPhone.getText().toString();
         email = edtEmail.getText().toString();
         password = edtPass.getText().toString();
-        rdoSelected = findViewById(rdoPayment.getCheckedRadioButtonId());
+
+        rdoSelected = findViewById(rdgPayment.getCheckedRadioButtonId());
         paymentType = rdoSelected.getText().toString();
+
+        cardName = edtCardName.getText().toString();
         carPlate = edtPlate.getText().toString();
         expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
         cardNumber = edtCardNumber.getText().toString();
@@ -195,11 +199,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             allValidations = false;
         }
 
-//        if(paymentType == null){
-//            rdoSelected.setError("You must select a payment type");
-//        }
 
-        if (rdoSelected.getText().toString().isEmpty()){
+        if (rdgPayment.getCheckedRadioButtonId() == -1){
+            rdoSelected = findViewById(rdgPayment.getCheckedRadioButtonId());
             rdoSelected.setError("You must select a payment type");
             allValidations = false;
         }
