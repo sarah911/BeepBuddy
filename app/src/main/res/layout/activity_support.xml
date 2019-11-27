@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3736E4F4"
     tools:context="com.example.beepbuddy.SupportActivity">
 
     <ImageButton
         android:id="@+id/btnCall"
-        android:layout_width="71dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="82dp"
+        android:layout_height="69dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
+        android:backgroundTint="#B5007FD4"
         android:contentDescription="@string/btnCall"
-        app:layout_constraintEnd_toEndOf="@+id/imgLogoSup"
-        app:layout_constraintHorizontal_bias="0.326"
-        app:layout_constraintStart_toStartOf="@+id/imgLogoSup"
+        app:layout_constraintEnd_toEndOf="@+id/btnEmail"
         app:layout_constraintTop_toBottomOf="@+id/imgLogoSup"
         app:srcCompat="@drawable/phone_call" />
 
     <ImageButton
         android:id="@+id/btnEmail"
-        android:layout_width="71dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="82dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="#03A9F4"
         android:contentDescription="@string/buttonEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCall"
@@ -69,7 +68,7 @@
         android:fontFamily="@font/baloo"
         android:text="@string/supportTitle"
         android:textColor="#3F51B5"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgLogoSup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgLogoSup"
@@ -121,5 +120,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnEmail"
         app:layout_constraintTop_toBottomOf="@+id/tvCall" />
+
+    <ImageView
+        android:id="@+id/ivSupportIcon"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        app:srcCompat="@drawable/social_care" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

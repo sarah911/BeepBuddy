@@ -95,7 +95,7 @@
     <string name="clickHere">Click here for more options</string>
     <string name="park">Park</string>
     <string name="supportNum">Tel. 123-456-7890</string>
-    <string name="supEmail">Email: smsarah911@gmail.com</string>
+    <string name="supEmail">Email: beebbuddy@support.com</string>
     <string-array name="year_array">
         <item>@string/nineteen</item>
         <item>@string/twenty</item>

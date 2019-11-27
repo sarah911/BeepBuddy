@@ -73,7 +73,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
         emailIntent.setType("text/plain");
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL,
-                new String[]{"smsarah911@gmail.com"});
+                new String[]{"beebbuddy@support.com"});
 
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Test Email");
 
