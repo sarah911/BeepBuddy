@@ -12,16 +12,26 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.net.Inet4Address;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button btnMainSearch;
+    Button btnMainPark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnMainPark = findViewById(R.id.btn2Park);
+        btnMainPark.setOnClickListener(this);
+
+        btnMainSearch = findViewById(R.id.btn2Search);
+        btnMainSearch.setOnClickListener(this);
     }
 
     @Override
@@ -35,15 +45,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.item_add:
-                Intent intent = new Intent(this, AddActivity.class);
-                this.startActivity(intent);
+                this.openAddParking();
                 break;
             case R.id.item_receipts:
                 //TODO add page for receipt lists
                 break;
             case R.id.item_search:
-                Intent intentI = new Intent(this, MapsActivity.class);
-                this.startActivity(intentI);
+                this.openSearchParking();
                 break;
             case R.id.item_profile:
                 this.editProfile();
@@ -100,4 +108,24 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn2Park:
+                this.openAddParking();
+                break;
+            case R.id.btn2Search:
+                this.openSearchParking();
+                break;
+        }
+    }
+
+    void openAddParking(){
+        Intent intent = new Intent(this, AddActivity.class);
+        this.startActivity(intent);
+    }
+    void openSearchParking(){
+        Intent intentI = new Intent(this, MapsActivity.class);
+        this.startActivity(intentI);
+    }
 }
