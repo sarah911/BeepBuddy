@@ -47,7 +47,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     EditText edtEmail;
     EditText edtPass;
     EditText edtConfirmPass;
-    EditText edtExpDate;
     EditText edtCVV;
     EditText edtCardName;
     EditText edtPlate;
@@ -87,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtPlate = findViewById(R.id.edt_plate);
         spnMonth = findViewById(R.id.spnMonth);
         spnYear = findViewById(R.id.spnYear);
-        edtCardName = findViewById(R.id.edt_card_number);
+        edtCardNumber = findViewById(R.id.edt_card_number);
 
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
         spnMonth.setAdapter(monthAdapter);
@@ -111,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_submit:
                 if(this.validateData()){
                     this.createUserAndReply();
-                }
+               }
                 break;
             case R.id.btn_cancel:
                 this.openSignInActivity();
