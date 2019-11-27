@@ -24,6 +24,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String buildingCode;
     String carPlate;
     String hostSuite;
+    String parkingAmount;
 
     
     UserViewModel userViewModel;
@@ -46,17 +47,15 @@ public class ViewReceiptActivity extends AppCompatActivity {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
-        tv1ParkingCost = findViewById(R.id.tvParkingCost);
+        tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
     }
     
     private void fetchFromDB() {
         buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
         carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
         hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+        parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
 
-//        receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
-//        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
-//        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
 
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
@@ -66,6 +65,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
                         tv1BuildingCode.setText(buildingCode);
                         tv1CarPlateNumber.setText(carPlate);
                         tv1HostSuite.setText(hostSuite);
+                    tv1ParkingCost.setText(parkingAmount);
 
                     //}
                 }

@@ -35,7 +35,9 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     String buildingCode;
     String carPlate;
     String hostSuite;
-
+    String parkingAmount;
+    Integer parkingDuration;
+    Integer parkingCharges;
 
     UserViewModel userViewModel;
 
@@ -67,24 +69,44 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             case R.id.btnCalculate:
                 this.getValues();
                 this.openViewReceiptActivity();
-                this.saveToDB();
+                this.calculateParkingCharges();
+                //this.saveToDB();
         }
 
     }
 
-    private void saveToDB() {
-        User newUser = new User(null, null, null, null, carPlate,
-                null, null, null, null, null, null);
-        newUser.calculateParkingCharges();
-        Log.e("AddActivity", newUser.toString());
-        userViewModel.insert(newUser);
+//    private void saveToDB() {
+//        User newUser = new User(null, null, null, null, carPlate,
+//                null, null, null, null, null, null);
+//        newUser.calculateParkingCharges();
+//        Log.e("AddActivity", newUser.toString());
+//        userViewModel.insert(newUser);
+//    }
+
+        public void calculateParkingCharges(){
+        if(this.parkingDuration <= 1){
+            parkingCharges = 4;
+        } if (this.parkingDuration <= 3){
+            parkingCharges = 8;
+        } if (this.parkingDuration <= 10){
+            parkingCharges = 12;
+        } else {
+            parkingCharges = 20;
+        }
+
+        this.calculateAmount();
     }
+
+    private void calculateAmount() {
+        parkingAmount = "$" + parkingCharges;
+    }
+
 
     private void getValues() {
         buildingCode = edtBuildingCode.getText().toString();
         carPlate = edtCarPlate.getText().toString();
         hostSuite = edtHostSuite.getText().toString();
-       // parkingDuration = Integer.parseInt(edtDuration.getText().toString());
+       parkingDuration = Integer.parseInt(edtDuration.getText().toString());
 
     }
 
@@ -93,7 +115,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
         receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
         receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-        //receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
         startActivity(receiptIntent);
     }
 
