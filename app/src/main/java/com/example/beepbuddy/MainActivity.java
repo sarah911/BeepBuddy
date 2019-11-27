@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 this.startActivity(intent);
                 break;
             case R.id.item_receipts:
-                //TODO
+                //TODO add page for receipt lists
                 break;
             case R.id.item_search:
                 Intent intentI = new Intent(this, MapsActivity.class);
@@ -83,8 +83,13 @@ public class MainActivity extends AppCompatActivity {
                         EditText editPhone = dialogView.findViewById(R.id.edit_phone);
                         EditText editEmail = dialogView.findViewById(R.id.edit_email);
                         EditText editPass = dialogView.findViewById(R.id.edit_password);
+                        EditText editPlate = dialogView.findViewById(R.id.edit_plate);
+                        EditText editCardName = dialogView.findViewById(R.id.edit_card_name);
+                        EditText editCardNum = dialogView.findViewById(R.id.edit_card_number);
+                        EditText editCVV = dialogView.findViewById(R.id.edit_cvv);
 
-                        //TODO other fields and add to the xml as well
+                        //TODO add spinner fields for expiry date
+
                         //TODO how to update this to the user ?
 
 
