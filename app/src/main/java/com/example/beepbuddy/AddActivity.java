@@ -39,6 +39,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     Integer parkingDuration;
     Integer parkingCharges;
 
+
+
     UserViewModel userViewModel;
 
 
@@ -83,7 +85,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 //        userViewModel.insert(newUser);
 //    }
 
-        public void calculateParkingCharges(){
+    public void calculateParkingCharges(){
         if(this.parkingDuration <= 1){
             parkingCharges = 4;
         } if (this.parkingDuration <= 3){
@@ -106,7 +108,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         buildingCode = edtBuildingCode.getText().toString();
         carPlate = edtCarPlate.getText().toString();
         hostSuite = edtHostSuite.getText().toString();
-       parkingDuration = Integer.parseInt(edtDuration.getText().toString());
+        parkingDuration = Integer.parseInt(edtDuration.getText().toString());
 
     }
 
@@ -131,3 +133,4 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         });
     }
 }
+

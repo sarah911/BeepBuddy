@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
@@ -20,13 +23,17 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1BuildingCode;
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
-    
+
     String buildingCode;
     String carPlate;
     String hostSuite;
     String parkingAmount;
 
-    
+//    Calendar calendar;
+//    SimpleDateFormat dateFormat;
+//    String date;
+
+
     UserViewModel userViewModel;
 
     @Override
@@ -36,36 +43,62 @@ public class ViewReceiptActivity extends AppCompatActivity {
         this.referWidgets();
         userViewModel = new UserViewModel(getApplication());
         this.fetchFromDB();
+       // Calendar c = Calendar.getInstance();
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("EEE, MMM d, ''yy");
+        SimpleDateFormat mtformat = new SimpleDateFormat("h:mm a");
+        String strDate = "" + mdformat.format(calendar.getTime());
+        String strTime = "" + mtformat.format(calendar.getTime());
+        set(strTime);
+        display(strDate);
+
+    }
+
+    private void set(String time){
+        tv1Time = findViewById(R.id.tv1Time);
+        tv1Time.setText(time);
+    }
+
+    private void display(String num) {
+        tv1Date = findViewById(R.id.tv1Date);
+
+        tv1Date.setText(num);
 
     }
 
     private void referWidgets() {
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
-        tv1Date = findViewById(R.id.tv1Date);
-        tv1Time = findViewById(R.id.tv1Time);
+        //tv1Date = findViewById(R.id.tv1Date);
+        //tv1Time = findViewById(R.id.tv1Time);
         tv1ParkingDuration = findViewById(R.id.tv1ParkingDuration);
         tv1BuildingCode = findViewById(R.id.tv1BuildingCode);
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
         tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
     }
-    
+
     private void fetchFromDB() {
         buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
         carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
         hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
         parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
+//        dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//        date = dateFormat.format(calendar.getTime());
 
+//        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+//        date = df.format(calendar.getTime());
 
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> allUsers) {
                 for(User user : allUsers){
                     //if(user.getPlateNumber().equals(carPlate)){
-                        tv1BuildingCode.setText(buildingCode);
-                        tv1CarPlateNumber.setText(carPlate);
-                        tv1HostSuite.setText(hostSuite);
+                    tv1BuildingCode.setText(buildingCode);
+                    tv1CarPlateNumber.setText(carPlate);
+                    tv1HostSuite.setText(hostSuite);
                     tv1ParkingCost.setText(parkingAmount);
+                    //tv1Date.setText(date);
 
                     //}
                 }
@@ -74,5 +107,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     }
 
-    
+
 }
+
