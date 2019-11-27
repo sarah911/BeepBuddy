@@ -24,6 +24,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
 
+    Integer parkingDuration;
+
     String buildingCode;
     String carPlate;
     String hostSuite;
@@ -56,7 +58,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     private void display(String num) {
         tv1Date = findViewById(R.id.tv1Date);
-
         tv1Date.setText(num);
 
     }
@@ -76,7 +77,17 @@ public class ViewReceiptActivity extends AppCompatActivity {
         carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
         hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
         parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
+        parkingDuration = this.getIntent().getIntExtra("EXTRA_PARKING_DURATION", 0);
 
+         if(this.parkingDuration <= 1){
+            parkingAmount = "4";
+        } if (this.parkingDuration <= 3){
+            parkingAmount = "8";
+        } if (this.parkingDuration <= 10){
+            parkingAmount = "12";
+        } else {
+            parkingAmount = "20";
+        }
 
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
@@ -86,6 +97,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
                     tv1BuildingCode.setText(buildingCode);
                     tv1CarPlateNumber.setText(carPlate);
                     tv1HostSuite.setText(hostSuite);
+                    tv1ParkingDuration.setText(parkingDuration.toString());
                     tv1ParkingCost.setText(parkingAmount);
 
                     //}

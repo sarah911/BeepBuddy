@@ -36,7 +36,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     String carPlate;
     String hostSuite;
     String parkingAmount;
-    Integer parkingDuration;
+    Integer parkingDuration = 0;
     Integer parkingCharges;
 
 
@@ -117,7 +117,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
         receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
         receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
+        //receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
         startActivity(receiptIntent);
     }
 
