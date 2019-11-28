@@ -1,4 +1,4 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
+import com.example.beepbuddy.R;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
 

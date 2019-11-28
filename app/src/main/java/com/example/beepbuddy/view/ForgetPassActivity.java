@@ -1,7 +1,4 @@
-package com.example.beepbuddy;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
+package com.example.beepbuddy.view;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+
+import com.example.beepbuddy.R;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
 

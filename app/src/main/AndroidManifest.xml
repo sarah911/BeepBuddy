@@ -18,8 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgetPassActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".view.ForgetPassActivity"></activity>
+        <activity android:name=".view.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,11 +33,11 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".view.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".WebActivity" />
-        <activity android:name=".SupportActivity" />
-        <activity android:name=".SignInActivity">
+        <activity android:name=".view.WebActivity" />
+        <activity android:name=".view.SupportActivity" />
+        <activity android:name=".view.SignInActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -46,11 +46,11 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".ViewReceiptActivity" />
-        <activity android:name=".ReceiptListActivity" />
-        <activity android:name=".AddActivity" />
-        <activity android:name=".LauncherActivity">
+        <activity android:name=".view.SignUpActivity" />
+        <activity android:name=".view.ViewReceiptActivity" />
+        <activity android:name=".view.ReceiptListActivity" />
+        <activity android:name=".view.AddActivity" />
+        <activity android:name=".view.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6AF43636"
-    tools:context="com.example.beepbuddy.SupportActivity">
+    tools:context="com.example.beepbuddy.view.SupportActivity">
 
     <ImageButton
         android:id="@+id/btnCall"

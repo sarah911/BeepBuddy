@@ -1,29 +1,23 @@
-package com.example.beepbuddy;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
+package com.example.beepbuddy.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.beepbuddy.db.UserDao;
-import com.example.beepbuddy.db.UserRepository;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+
+import com.example.beepbuddy.DBAdapter;
+import com.example.beepbuddy.R;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
-import com.example.beepbuddy.db.UserRepository;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class AddActivity extends AppCompatActivity implements View.OnClickListener {

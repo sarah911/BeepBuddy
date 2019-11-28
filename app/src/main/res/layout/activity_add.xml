@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:backgroundTint="@color/colorAccent"
-    tools:context="com.example.beepbuddy.AddActivity">
+    tools:context="com.example.beepbuddy.view.AddActivity">
 
     <TextView
         android:id="@+id/tvHeading2"
