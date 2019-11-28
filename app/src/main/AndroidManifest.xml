@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PassingActivity"></activity>
+        <activity android:name=".view.PassingActivity"></activity>
         <activity android:name=".view.ForgetPassActivity" />
         <activity android:name=".view.MainActivity" />
         <!--

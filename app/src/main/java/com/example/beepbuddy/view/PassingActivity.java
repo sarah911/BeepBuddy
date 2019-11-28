@@ -1,4 +1,4 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.beepbuddy.R;
 import com.example.beepbuddy.view.MainActivity;
 import com.example.beepbuddy.view.ViewReceiptActivity;
 import com.example.beepbuddy.viewmodel.UserViewModel;
