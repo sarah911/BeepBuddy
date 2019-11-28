@@ -19,8 +19,7 @@ import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
 
-//    Button btnRHome;
-//    Button btnRList;
+
 
     TextView tv1CarPlateNumber;
     TextView tv1Date;
@@ -30,18 +29,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
 
-    String parkingDuration;
 
-    String buildingCode;
-    String carPlate;
-    String hostSuite;
-    String parkingAmount;
-    String strDate;
-    String strTime;
-
-    UserViewModel userViewModel;
-
-    Button btnAddReceipt;
     DBAdapter db;
     Cursor users;
 
@@ -50,17 +38,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_receipt);
-//        this.referWidgets();
-//        userViewModel = new UserViewModel(getApplication());
-//        this.fetchFromDB();
-//
-//        Calendar calendar = Calendar.getInstance();
-//        SimpleDateFormat mdformat = new SimpleDateFormat("EEE, MMM d, ''yy");
-//        SimpleDateFormat mtformat = new SimpleDateFormat("h:mm a");
-//        String strDate = "" + mdformat.format(calendar.getTime());
-//        String strTime = "" + mtformat.format(calendar.getTime());
-//        set(strTime);
-//        display(strDate);
 
         db = new DBAdapter(this);
         db.open();
@@ -69,11 +46,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listView);
         UserAdapter adapter = new UserAdapter(this, users);
         listView.setAdapter(adapter);
-
-
-
-        //btnRHome = findViewById(R.id.btnRHome);
-
 
     }
 
