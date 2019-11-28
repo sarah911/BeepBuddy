@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //TODO how to update this to the user ?
 
-                        //userViewModel.update(User);
+                        //userViewModel.update(user);
 
 
                     }
