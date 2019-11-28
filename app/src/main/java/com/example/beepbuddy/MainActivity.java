@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -97,10 +100,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         EditText editCardNum = dialogView.findViewById(R.id.edit_card_number);
                         EditText editCVV = dialogView.findViewById(R.id.edit_cvv);
 
+                        Spinner spnMonth = dialogView.findViewById(R.id.spn_mm);
+                        Spinner spnYear = dialogView.findViewById(R.id.spn_yyyy);
+
+                        RadioGroup rdgPayment = dialogView.findViewById(R.id.rdgPayment);
+                        RadioButton rdoSelected = dialogView.findViewById(rdgPayment.getCheckedRadioButtonId());
+
                         String newFN = editFN.getText().toString();
+                        String newLN = editLN.getText().toString();
+                        String newPhone = editPhone.getText().toString();
+                        String newEmail = editEmail.getText().toString();
+                        String newPass = editPass.getText().toString();
+                        String newPlate = editPlate.getText().toString();
+                        String newCardName = editCardName.getText().toString();
+                        String newCardNum = editCardNum.getText().toString();
+                        String newCVV = editCVV.getText().toString();
+                        String expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
+                        String newType = rdoSelected.getText().toString();
 
-                        //newFN =
-
+                        //userViewModel.update();
 
                         //TODO add spinner fields for expiry date
 

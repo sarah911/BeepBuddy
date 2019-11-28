@@ -137,19 +137,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbVisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/visa"
-            app:layout_constraintEnd_toStartOf="@+id/radioButton4"
-            app:layout_constraintStart_toStartOf="@+id/radioButton4"
+            app:layout_constraintEnd_toStartOf="@+id/rbMaster"
+            app:layout_constraintStart_toStartOf="@+id/rbMaster"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rbMaster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -157,7 +157,7 @@
             android:layout_marginEnd="8dp"
             android:text="@string/mastercard"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/radioButton3"
+            app:layout_constraintStart_toEndOf="@+id/rbVisa"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     </RadioGroup>
