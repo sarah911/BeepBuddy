@@ -1,4 +1,4 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.beepbuddy.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;

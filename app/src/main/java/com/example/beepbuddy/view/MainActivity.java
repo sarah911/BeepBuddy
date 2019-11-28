@@ -1,4 +1,4 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,12 +9,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
+import com.example.beepbuddy.R;
+import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -97,16 +105,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         EditText editCardNum = dialogView.findViewById(R.id.edit_card_number);
                         EditText editCVV = dialogView.findViewById(R.id.edit_cvv);
 
-                        String newFN = editFN.getText().toString();
+                        Spinner spnMonth = dialogView.findViewById(R.id.spn_mm);
+                        Spinner spnYear = dialogView.findViewById(R.id.spn_yyyy);
 
-                        //newFN =
+//                        ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
+//                        spnMonth.setAdapter(monthAdapter);
+//
+//                        ArrayAdapter yearAdapter = ArrayAdapter.createFromResource(this, R.array.year_array, android.R.layout.simple_spinner_dropdown_item);
+//                        spnYear.setAdapter(yearAdapter);
+
+                        RadioGroup rdgPayment = dialogView.findViewById(R.id.rdgPayment);
+                        RadioButton rdoSelected = dialogView.findViewById(rdgPayment.getCheckedRadioButtonId());
+
+                        final String newFN = editFN.getText().toString();
+                        final String newLN = editLN.getText().toString();
+                        final String newPhone = editPhone.getText().toString();
+                        final String newEmail = editEmail.getText().toString();
+                        final String newPass = editPass.getText().toString();
+                        final String newPlate = editPlate.getText().toString();
+                        final String newCardName = editCardName.getText().toString();
+                        final String newCardNum = editCardNum.getText().toString();
+                        final String newCVV = editCVV.getText().toString();
+                        final String newDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
+                        final String newType = rdoSelected.getText().toString();
+
+                        userViewModel = new UserViewModel(getApplication());
+
+                        userViewModel.getAllUsers().observe(MainActivity.this, new Observer<List<User>>() {
+                            @Override
+                            public void onChanged(List<User> users) {
+                                //task when the data changes
+                                User newUser = new User(newFN, newLN, newEmail, newPass, newPlate, newCardName, newDate, newPhone, newCVV, newType, newCardNum);
+                                userViewModel.update(newUser);
+                            }
+                        });
 
 
-                        //TODO add spinner fields for expiry date
-
-                        //TODO how to update this to the user ?
-
-                        //userViewModel.update(user);
 
 
                     }
@@ -141,4 +175,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intentR = new Intent(this, ViewReceiptActivity.class);
         this.startActivity(intentR);
     }
+
 }

@@ -1,28 +1,21 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import com.example.beepbuddy.model.User;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import com.example.beepbuddy.R;
+import com.example.beepbuddy.Utils;
+import com.example.beepbuddy.model.User;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 

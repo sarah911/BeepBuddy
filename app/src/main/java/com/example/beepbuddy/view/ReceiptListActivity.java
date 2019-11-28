@@ -1,8 +1,10 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.beepbuddy.R;
 
 public class ReceiptListActivity extends AppCompatActivity {
 

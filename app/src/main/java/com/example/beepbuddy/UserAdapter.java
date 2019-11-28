@@ -7,10 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
-import com.example.beepbuddy.AddActivity;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * BeepBuddy created by singla.pallavi12

@@ -1,21 +1,17 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 
-import com.example.beepbuddy.model.User;
+import com.example.beepbuddy.DBAdapter;
+import com.example.beepbuddy.R;
+import com.example.beepbuddy.UserAdapter;
 import com.example.beepbuddy.viewmodel.UserViewModel;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
 

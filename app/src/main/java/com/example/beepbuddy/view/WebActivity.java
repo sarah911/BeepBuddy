@@ -1,6 +1,4 @@
-package com.example.beepbuddy;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.beepbuddy.view;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +6,10 @@ import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.beepbuddy.R;
 
 public class WebActivity extends AppCompatActivity {
 

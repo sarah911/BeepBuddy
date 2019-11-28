@@ -1,8 +1,5 @@
-package com.example.beepbuddy;
+package com.example.beepbuddy.view;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,6 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.example.beepbuddy.R;
 
 public class SupportActivity extends AppCompatActivity implements View.OnClickListener {
 
