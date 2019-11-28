@@ -100,6 +100,10 @@
     <string name="addReceipt">Add to Receipt List</string>
     <string name="homePage">HOME PAGE</string>
     <string name="ReceiptList">RECEIPT LIST</string>
+    <string name="inHours">Enter amount in hours</string>
+    <string name="passwordRecover">Recover Password</string>
+    <string name="yourpass">Your password:</string>
+    <string name="enterEmailandPlate">Please enter your email and plate number.</string>
     <string-array name="year_array">
         <item>@string/nineteen</item>
         <item>@string/twenty</item>
