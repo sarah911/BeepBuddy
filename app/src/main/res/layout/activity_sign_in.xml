@@ -23,7 +23,8 @@
         android:ems="10"
         android:fontFamily="@font/coustard"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:text="test@test.com" />
 
     <EditText
         android:id="@+id/edtPassword"
@@ -35,7 +36,8 @@
         android:ems="10"
         android:fontFamily="@font/coustard"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:text="test" />
 
     <Button
         android:id="@+id/btnSignIn"

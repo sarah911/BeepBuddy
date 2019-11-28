@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void openReceiptList(){
-        Intent intentR = new Intent(this,ReceiptListActivity.class);
+        Intent intentR = new Intent(this, ViewReceiptActivity.class);
         this.startActivity(intentR);
     }
 
