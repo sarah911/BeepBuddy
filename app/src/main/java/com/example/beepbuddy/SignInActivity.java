@@ -123,7 +123,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     void resetPassword(){
-        //TODO
+        //TODO reset password method ??
     }
 
     void openMainActivity(){
@@ -169,8 +169,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         //to clear all preferences
         sp.edit().clear().commit();
 
-        //to delete specific preference
-        //sp.edit().remove(PASSWORD).commit();
     }
 
     private void getRememberedData(){

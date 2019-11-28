@@ -17,7 +17,7 @@ public class LauncherActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(4000);
-                    Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent myIntent = new Intent(getApplicationContext(), SignInActivity.class);
                     startActivity(myIntent);
                     finish();
                 } catch (InterruptedException e) {

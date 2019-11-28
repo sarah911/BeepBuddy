@@ -95,7 +95,7 @@
     <string name="clickHere">Click here for more options</string>
     <string name="park">Park</string>
     <string name="supportNum">Tel. 123-456-7890</string>
-    <string name="supEmail">Email: beebbuddy@support.com</string>
+    <string name="supEmail">Email: beepbuddy@support.com</string>
     <string name="supportIcon">icon for support page</string>
     <string name="addReceipt">Add to Receipt List</string>
     <string-array name="year_array">

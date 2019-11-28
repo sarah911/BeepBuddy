@@ -15,12 +15,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.beepbuddy.model.User;
+import com.example.beepbuddy.viewmodel.UserViewModel;
+
 import java.net.Inet4Address;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnMainSearch;
     Button btnMainPark;
+
+    UserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //TODO add spinner fields for expiry date
 
                         //TODO how to update this to the user ?
+
+                        //userViewModel.update(User);
 
 
                     }
