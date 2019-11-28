@@ -1,6 +1,8 @@
 package com.example.beepbuddy;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-public class ViewReceiptActivity extends AppCompatActivity {
+public class ViewReceiptActivity extends AppCompatActivity implements View.OnClickListener{
 
 //    Button btnRHome;
 //    Button btnRList;
@@ -34,6 +36,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String parkingAmount;
 
     UserViewModel userViewModel;
+
+    Button btnAddReceipt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +60,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
 
     }
 
-    private void set(String time) {
+    private void set(String time){
         tv1Time = findViewById(R.id.tv1Time);
         tv1Time.setText(time);
     }
@@ -75,6 +79,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
         tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
+        btnAddReceipt = findViewById(R.id.btnAddReceipt);
     }
 
     private void fetchFromDB() {
@@ -84,13 +89,11 @@ public class ViewReceiptActivity extends AppCompatActivity {
         parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
         parkingDuration = this.getIntent().getIntExtra("EXTRA_PARKING_DURATION", 0);
 
-        if (this.parkingDuration <= 1) {
+         if(this.parkingDuration <= 1){
             parkingAmount = "4";
-        }
-        if (this.parkingDuration <= 3) {
+        } if (this.parkingDuration <= 3){
             parkingAmount = "8";
-        }
-        if (this.parkingDuration <= 10) {
+        } if (this.parkingDuration <= 10){
             parkingAmount = "12";
         } else {
             parkingAmount = "20";
@@ -99,7 +102,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> allUsers) {
-                for (User user : allUsers) {
+                for(User user : allUsers){
                     //if(user.getPlateNumber().equals(carPlate)){
                     tv1BuildingCode.setText(buildingCode);
                     tv1CarPlateNumber.setText(carPlate);
@@ -113,7 +116,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
         });
 
     }
-}
 
 //    @Override
 //    public void onClick(View view) {
@@ -136,7 +138,15 @@ public class ViewReceiptActivity extends AppCompatActivity {
 //        this.startActivity(intentI);
 //    }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnAddReceipt:
+                //TODO submit it to a receipt
 
+                break;
 
-//}
+        }
+    }
+}
 

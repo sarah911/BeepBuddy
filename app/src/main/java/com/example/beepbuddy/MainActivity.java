@@ -1,13 +1,8 @@
 package com.example.beepbuddy;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,10 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.beepbuddy.model.User;
-import com.example.beepbuddy.viewmodel.UserViewModel;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.net.Inet4Address;
+import com.example.beepbuddy.viewmodel.UserViewModel;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.openAddParking();
                 break;
             case R.id.item_receipts:
-                //TODO add page for receipt lists
+                this.openReceiptList();
                 break;
             case R.id.item_search:
                 this.openSearchParking();
@@ -101,6 +97,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         EditText editCardNum = dialogView.findViewById(R.id.edit_card_number);
                         EditText editCVV = dialogView.findViewById(R.id.edit_cvv);
 
+                        String newFN = editFN.getText().toString();
+
+                        //newFN =
+
+
                         //TODO add spinner fields for expiry date
 
                         //TODO how to update this to the user ?
@@ -134,5 +135,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void openSearchParking(){
         Intent intentI = new Intent(this, MapsActivity.class);
         this.startActivity(intentI);
+    }
+
+    void openReceiptList(){
+        Intent intentR = new Intent(this,ReceiptListActivity.class);
+        this.startActivity(intentR);
     }
 }
