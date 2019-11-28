@@ -32,6 +32,23 @@ public class UserRepository {
         new insertAsyncTask(userDao).execute(user);
     }
 
+    public void update(User user){
+        new updateFruitAsyncTask(userDao).execute(user);
+    }
+
+    public static class updateFruitAsyncTask extends AsyncTask<User, Void, Void>{
+        private UserDao userDao;
+
+        private updateFruitAsyncTask(UserDao userDao) {this.userDao = userDao;}
+
+        @Override
+        protected Void doInBackground(User... users) {
+            userDao.update(users[0]);
+            return null;
+        }
+
+    }
+
     private static class insertAsyncTask extends AsyncTask<User, Void, Void> {
         private UserDao asyncTaskDao;
 

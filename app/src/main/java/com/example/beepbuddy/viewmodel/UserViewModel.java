@@ -29,6 +29,7 @@ public class UserViewModel extends AndroidViewModel {
     public void insert(User user){
         userRepository.insert(user);
     }
+    public void update(User user) {userRepository.update(user);}
 
     public LiveData<List<User>> getAllUsers(){
         return allUsers;
