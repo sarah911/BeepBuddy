@@ -3,7 +3,6 @@ package com.example.beepbuddy;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -107,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         Spinner spnMonth = dialogView.findViewById(R.id.spn_mm);
                         Spinner spnYear = dialogView.findViewById(R.id.spn_yyyy);
-//
+
 //                        ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
 //                        spnMonth.setAdapter(monthAdapter);
 //
@@ -117,19 +116,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         RadioGroup rdgPayment = dialogView.findViewById(R.id.rdgPayment);
                         RadioButton rdoSelected = dialogView.findViewById(rdgPayment.getCheckedRadioButtonId());
 
-                        //Button btn
-
-                        String newFN = editFN.getText().toString();
-                        String newLN = editLN.getText().toString();
-                        String newPhone = editPhone.getText().toString();
-                        String newEmail = editEmail.getText().toString();
-                        String newPass = editPass.getText().toString();
-                        String newPlate = editPlate.getText().toString();
-                        String newCardName = editCardName.getText().toString();
-                        String newCardNum = editCardNum.getText().toString();
-                        String newCVV = editCVV.getText().toString();
-                        String expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
-                        String newType = rdoSelected.getText().toString();
+                        final String newFN = editFN.getText().toString();
+                        final String newLN = editLN.getText().toString();
+                        final String newPhone = editPhone.getText().toString();
+                        final String newEmail = editEmail.getText().toString();
+                        final String newPass = editPass.getText().toString();
+                        final String newPlate = editPlate.getText().toString();
+                        final String newCardName = editCardName.getText().toString();
+                        final String newCardNum = editCardNum.getText().toString();
+                        final String newCVV = editCVV.getText().toString();
+                        final String newDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
+                        final String newType = rdoSelected.getText().toString();
 
                         userViewModel = new UserViewModel(getApplication());
 
@@ -137,19 +134,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void onChanged(List<User> users) {
                                 //task when the data changes
-                                for (User user : users){
-                                    Log.e("SignInActivity", user.toString());
-                                }
+                                User newUser = new User(newFN, newLN, newEmail, newPass, newPlate, newCardName, newDate, newPhone, newCVV, newType, newCardNum);
+                                userViewModel.update(newUser);
                             }
                         });
 
-                        //userViewModel.update();
 
-                        //TODO add spinner fields for expiry date
-
-                        //TODO how to update this to the user ?
-
-                        //userViewModel.update(user);
 
 
                     }
@@ -184,4 +174,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intentR = new Intent(this,ReceiptListActivity.class);
         this.startActivity(intentR);
     }
+
 }
