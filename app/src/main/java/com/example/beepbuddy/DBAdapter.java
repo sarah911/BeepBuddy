@@ -71,7 +71,7 @@ public class DBAdapter {
         {
             Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
-            db.execSQL("DROP TABLE IF EXISTS players");
+            db.execSQL("DROP TABLE IF EXISTS users");
             onCreate(db);
         }
     }
