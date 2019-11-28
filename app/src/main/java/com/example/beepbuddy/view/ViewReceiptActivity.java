@@ -7,11 +7,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import com.example.beepbuddy.DBAdapter;
 import com.example.beepbuddy.R;
 import com.example.beepbuddy.UserAdapter;
+import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
+
+import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
 
@@ -26,12 +30,14 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
 
-    Integer parkingDuration;
+    String parkingDuration;
 
     String buildingCode;
     String carPlate;
     String hostSuite;
     String parkingAmount;
+    String strDate;
+    String strTime;
 
     UserViewModel userViewModel;
 
@@ -93,23 +99,34 @@ public class ViewReceiptActivity extends AppCompatActivity {
        // btnAddReceipt = findViewById(R.id.btnAddReceipt);
     }
 
+
+//     receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
+//        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
+//        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
+//        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
+//        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+//        receiptIntent.putExtra("EXTRA_DATE", strDate);
+//        receiptIntent.putExtra("EXTRA_TIME", strTime);
 //    private void fetchFromDB() {
-////        buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-////        carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
-////        hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
-////        parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
-////        parkingDuration = this.getIntent().getIntExtra("EXTRA_PARKING_DURATION", 0);
+//        buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
+//        carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
+//        hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
+//        parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
+//        parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
+//        strDate = this.getIntent().getStringExtra("EXTRA_DATE");
+//        strTime = this.getIntent().getStringExtra("EXTRA_TIME");
 //
-//         if(this.parkingDuration <= 1){
-//            parkingAmount = "4";
 //
-//        } else if (this.parkingDuration <= 3){
-//            parkingAmount = "8";
-//        } else if (this.parkingDuration <= 10){
-//            parkingAmount = "12";
-//        } else {
-//            parkingAmount = "20";
-//        }
+////         if(this.parkingDuration <= 1){
+////            parkingAmount = "4";
+////
+////        } else if (this.parkingDuration <= 3){
+////            parkingAmount = "8";
+////        } else if (this.parkingDuration <= 10){
+////            parkingAmount = "12";
+////        } else {
+////            parkingAmount = "20";
+////        }
 //
 //        userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
 //            @Override
@@ -126,8 +143,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-
-    //}
+//
+//    }
 
 //    @Override
 //    public void onClick(View view) {
@@ -142,8 +159,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
 //    }
 //
 //    void openHomepage(){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        this.startActivity(intent);
+//        Intent activity_intent = new Intent(this, MainActivity.class);
+//        this.startActivity(activity_intent);
 //    }
 //    void openList(){
 //        Intent intentI = new Intent(this, MapsActivity.class);

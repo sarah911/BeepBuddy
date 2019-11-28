@@ -104,6 +104,8 @@
     <string name="passwordRecover">Recover Password</string>
     <string name="yourpass">Your password:</string>
     <string name="enterEmailandPlate">Please enter your email and plate number.</string>
+    <string name="mainPage">Go To Main Page</string>
+    <string name="viewReceipt">View All the Receipts</string>
     <string-array name="year_array">
         <item>@string/nineteen</item>
         <item>@string/twenty</item>

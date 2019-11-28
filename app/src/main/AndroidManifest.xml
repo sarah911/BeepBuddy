@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ForgetPassActivity"></activity>
+        <activity android:name=".PassingActivity"></activity>
+        <activity android:name=".view.ForgetPassActivity" />
         <activity android:name=".view.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -39,12 +39,12 @@
         <activity android:name=".view.SupportActivity" />
         <activity android:name=".view.SignInActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <activity_intent-filter> -->
+            <!-- <action android:name="android.activity_intent.action.MAIN" /> -->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            <!-- <category android:name="android.activity_intent.category.LAUNCHER" /> -->
+            <!-- </activity_intent-filter> -->
         </activity>
         <activity android:name=".view.SignUpActivity" />
         <activity android:name=".view.ViewReceiptActivity" />

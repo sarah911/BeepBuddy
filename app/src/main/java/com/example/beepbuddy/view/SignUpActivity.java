@@ -130,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         User newUser = new User(firstName, lastName, email, password, carPlate, cardName, expDate, phoneNumber, cvv, paymentType, cardNumber);
         Log.d("SignUpActivity", newUser.toString());
 
-        //reply to previous intent
+        //reply to previous activity_intent
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, newUser);
         setResult(RESULT_OK, replyIntent);
