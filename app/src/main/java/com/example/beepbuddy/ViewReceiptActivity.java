@@ -109,7 +109,7 @@ public class ViewReceiptActivity extends AppCompatActivity implements View.OnCli
                     tv1CarPlateNumber.setText(carPlate);
                     tv1HostSuite.setText(hostSuite);
                     tv1ParkingDuration.setText(parkingDuration.toString());
-                    tv1ParkingCost.setText(parkingAmount);
+                    tv1ParkingCost.setText("$"+parkingAmount);
 
                     //}
                 }
