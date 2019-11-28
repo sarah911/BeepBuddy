@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.beepbuddy.model.User;
@@ -14,7 +16,7 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.List;
 
-public class ViewReceiptActivity extends AppCompatActivity {
+public class ViewReceiptActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView tv1CarPlateNumber;
     TextView tv1Date;
@@ -32,6 +34,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     String parkingAmount;
 
     UserViewModel userViewModel;
+
+    Button btnAddReceipt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
         tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
+        btnAddReceipt = findViewById(R.id.btnAddReceipt);
     }
 
     private void fetchFromDB() {
@@ -108,5 +113,15 @@ public class ViewReceiptActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnAddReceipt:
+                //TODO submit it to a receipt
+
+                break;
+
+        }
+    }
 }
 
