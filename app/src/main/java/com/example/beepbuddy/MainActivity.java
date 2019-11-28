@@ -103,6 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Spinner spnMonth = dialogView.findViewById(R.id.spn_mm);
                         Spinner spnYear = dialogView.findViewById(R.id.spn_yyyy);
 
+
+//                        ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
+//                        spnMonth.setAdapter(monthAdapter);
+//
+//                        ArrayAdapter yearAdapter = ArrayAdapter.createFromResource(this, R.array.year_array, android.R.layout.simple_spinner_dropdown_item);
+//                        spnYear.setAdapter(yearAdapter);
+
                         RadioGroup rdgPayment = dialogView.findViewById(R.id.rdgPayment);
                         RadioButton rdoSelected = dialogView.findViewById(rdgPayment.getCheckedRadioButtonId());
 
