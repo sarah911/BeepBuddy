@@ -19,8 +19,7 @@ import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
 
-//    Button btnRHome;
-//    Button btnRList;
+
 
     TextView tv1CarPlateNumber;
     TextView tv1Date;
@@ -30,18 +29,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
     TextView tv1HostSuite;
     TextView tv1ParkingCost;
 
-    String parkingDuration;
 
-    String buildingCode;
-    String carPlate;
-    String hostSuite;
-    String parkingAmount;
-    String strDate;
-    String strTime;
-
-    UserViewModel userViewModel;
-
-    Button btnAddReceipt;
     DBAdapter db;
     Cursor users;
 
@@ -50,17 +38,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_receipt);
-//        this.referWidgets();
-//        userViewModel = new UserViewModel(getApplication());
-//        this.fetchFromDB();
-//
-//        Calendar calendar = Calendar.getInstance();
-//        SimpleDateFormat mdformat = new SimpleDateFormat("EEE, MMM d, ''yy");
-//        SimpleDateFormat mtformat = new SimpleDateFormat("h:mm a");
-//        String strDate = "" + mdformat.format(calendar.getTime());
-//        String strTime = "" + mtformat.format(calendar.getTime());
-//        set(strTime);
-//        display(strDate);
 
         db = new DBAdapter(this);
         db.open();
@@ -69,11 +46,6 @@ public class ViewReceiptActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listView);
         UserAdapter adapter = new UserAdapter(this, users);
         listView.setAdapter(adapter);
-
-
-
-        //btnRHome = findViewById(R.id.btnRHome);
-
 
     }
 
@@ -96,86 +68,9 @@ public class ViewReceiptActivity extends AppCompatActivity {
         tv1CarPlateNumber = findViewById(R.id.tv1CarPlateNumber);
         tv1HostSuite = findViewById(R.id.tv1HostSuite);
         tv1ParkingCost = findViewById(R.id.tv1ParkingCost);
-       // btnAddReceipt = findViewById(R.id.btnAddReceipt);
+
     }
 
 
-//     receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
-//        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
-//        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-//        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
-//        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
-//        receiptIntent.putExtra("EXTRA_DATE", strDate);
-//        receiptIntent.putExtra("EXTRA_TIME", strTime);
-//    private void fetchFromDB() {
-//        buildingCode = this.getIntent().getStringExtra("EXTRA_BUILDING_CODE");
-//        carPlate = this.getIntent().getStringExtra("EXTRA_CAR_PLATE");
-//        hostSuite = this.getIntent().getStringExtra("EXTRA_HOST_SUITE");
-//        parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
-//        parkingDuration = this.getIntent().getStringExtra("EXTRA_PARKING_DURATION");
-//        strDate = this.getIntent().getStringExtra("EXTRA_DATE");
-//        strTime = this.getIntent().getStringExtra("EXTRA_TIME");
-//
-//
-////         if(this.parkingDuration <= 1){
-////            parkingAmount = "4";
-////
-////        } else if (this.parkingDuration <= 3){
-////            parkingAmount = "8";
-////        } else if (this.parkingDuration <= 10){
-////            parkingAmount = "12";
-////        } else {
-////            parkingAmount = "20";
-////        }
-//
-//        userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
-//            @Override
-//            public void onChanged(List<User> allUsers) {
-//                for(User user : allUsers){
-//                    //if(user.getPlateNumber().equals(carPlate)){
-//                    tv1BuildingCode.setText(buildingCode);
-//                    tv1CarPlateNumber.setText(carPlate);
-//                    tv1HostSuite.setText(hostSuite);
-//                    tv1ParkingDuration.setText(parkingDuration.toString());
-//                    tv1ParkingCost.setText(parkingAmount);
-//
-//                    //}
-//                }
-//            }
-//        });
-//
-//    }
-
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.btnRHome:
-//                this.openHomepage();
-//                break;
-//            case R.id.btnRList:
-//                this.openList();
-//                break;
-//        }
-//    }
-//
-//    void openHomepage(){
-//        Intent activity_intent = new Intent(this, MainActivity.class);
-//        this.startActivity(activity_intent);
-//    }
-//    void openList(){
-//        Intent intentI = new Intent(this, MapsActivity.class);
-//        this.startActivity(intentI);
-//    }
-
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()){
-//            case R.id.btnAddReceipt:
-//                //TODO submit it to a receipt
-//
-//                break;
-//
-//        }
-//    }
 }
 

@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.example.beepbuddy.DBAdapter;
-import com.example.beepbuddy.PassingActivity;
 import com.example.beepbuddy.R;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
@@ -36,6 +36,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     String parkingAmount;
     String parkingDuration ;
     Integer parkingCharges;
+
+    Integer parkingTime;
 
     DBAdapter db;
 
@@ -87,47 +89,14 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
         Intent receiptIntent = new Intent(AddActivity.this, PassingActivity.class);
         startActivity(receiptIntent);
-
         openViewReceiptActivity();
 
         //calculateParkingCharges();
         getValues();
-//        switch (view.getId()){
-//            case R.id.btnCalculate:
-//                this.getValues();
-//                //this.openViewReceiptActivity();
-//                //this.calculateParkingCharges();
-//
-//        }
+
+
 
     }
-
-//    private void saveToDB() {
-//        User newUser = new User(null, null, null, null, carPlate,
-//                null, null, null, null, null, null);
-//        newUser.calculateParkingCharges();
-//        Log.e("AddActivity", newUser.toString());
-//        userViewModel.insert(newUser);
-//    }
-
-//    public void calculateParkingCharges(){
-//        if(Integer.parseInt(parkingDuration) <= 1){
-//            parkingCharges = 4;
-//        } if (Integer.parseInt(parkingDuration) <= 3){
-//            parkingCharges = 8;
-//        } if (Integer.parseInt(parkingDuration) <= 10){
-//            parkingCharges = 12;
-//        } else {
-//            parkingCharges = 20;
-//        }
-//
-//        this.calculateAmount();
-//    }
-//
-//    private void calculateAmount() {
-//        parkingAmount = "$" + parkingCharges;
-//    }
-
 
     private void getValues() {
 
@@ -149,9 +118,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         parkingAmount = "$" + parkingCharges;
 
 
-
-
-
         db.open();
         db.insertUser(buildingCode, carPlate, hostSuite, parkingDuration, strDate, strTime, parkingAmount);
         db.close();
@@ -167,14 +133,19 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         hostSuite = edtHostSuite.getText().toString();
         parkingDuration = edtDuration.getText().toString();
 
-        if(Integer.parseInt(parkingDuration) <= 1){
+        parkingTime = Integer.parseInt(parkingDuration);
+
+        if(parkingTime <= 1){
             parkingCharges = 4;
-        } if (Integer.parseInt(parkingDuration) <= 3){
+        } else if (parkingTime <= 3){
             parkingCharges = 8;
-        } if (Integer.parseInt(parkingDuration) <= 10){
+        } else if (parkingTime <= 10){
             parkingCharges = 12;
-        } else {
+        } else if (parkingTime<= 24) {
             parkingCharges = 20;
+//        } else{
+//            //Toast.makeText(this, "Please enter valid number of hours! Less than or equal to 24 hours.",Toast.LENGTH_LONG).show();
+//            parkingCharges = 0;
         }
 
         parkingAmount = "$" + parkingCharges;
