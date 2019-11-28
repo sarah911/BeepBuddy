@@ -91,9 +91,10 @@ public class ViewReceiptActivity extends AppCompatActivity implements View.OnCli
 
          if(this.parkingDuration <= 1){
             parkingAmount = "4";
-        } if (this.parkingDuration <= 3){
+
+        } else if (this.parkingDuration <= 3){
             parkingAmount = "8";
-        } if (this.parkingDuration <= 10){
+        } else if (this.parkingDuration <= 10){
             parkingAmount = "12";
         } else {
             parkingAmount = "20";
