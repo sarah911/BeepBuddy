@@ -3,6 +3,7 @@ package com.example.beepbuddy;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,8 +17,12 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
+import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -102,8 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         Spinner spnMonth = dialogView.findViewById(R.id.spn_mm);
                         Spinner spnYear = dialogView.findViewById(R.id.spn_yyyy);
-
-
+//
 //                        ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, android.R.layout.simple_spinner_dropdown_item);
 //                        spnMonth.setAdapter(monthAdapter);
 //
@@ -112,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         RadioGroup rdgPayment = dialogView.findViewById(R.id.rdgPayment);
                         RadioButton rdoSelected = dialogView.findViewById(rdgPayment.getCheckedRadioButtonId());
+
+                        //Button btn
 
                         String newFN = editFN.getText().toString();
                         String newLN = editLN.getText().toString();
@@ -124,6 +130,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         String newCVV = editCVV.getText().toString();
                         String expDate = (spnMonth.getSelectedItem().toString() + "/" + spnYear.getSelectedItem().toString());
                         String newType = rdoSelected.getText().toString();
+
+                        userViewModel = new UserViewModel(getApplication());
+
+                        userViewModel.getAllUsers().observe(MainActivity.this, new Observer<List<User>>() {
+                            @Override
+                            public void onChanged(List<User> users) {
+                                //task when the data changes
+                                for (User user : users){
+                                    Log.e("SignInActivity", user.toString());
+                                }
+                            }
+                        });
 
                         //userViewModel.update();
 
