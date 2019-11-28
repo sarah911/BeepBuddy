@@ -33,13 +33,13 @@ public class UserRepository {
     }
 
     public void update(User user){
-        new updateFruitAsyncTask(userDao).execute(user);
+        new updateAsyncTask(userDao).execute(user);
     }
 
-    public static class updateFruitAsyncTask extends AsyncTask<User, Void, Void>{
+    public static class updateAsyncTask extends AsyncTask<User, Void, Void>{
         private UserDao userDao;
 
-        private updateFruitAsyncTask(UserDao userDao) {this.userDao = userDao;}
+        private updateAsyncTask(UserDao userDao) {this.userDao = userDao;}
 
         @Override
         protected Void doInBackground(User... users) {
