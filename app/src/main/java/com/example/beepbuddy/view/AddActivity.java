@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.example.beepbuddy.DBAdapter;
+import com.example.beepbuddy.PassingActivity;
 import com.example.beepbuddy.R;
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
@@ -84,8 +85,11 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
 
-        Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);
+        Intent receiptIntent = new Intent(AddActivity.this, PassingActivity.class);
         startActivity(receiptIntent);
+
+        openViewReceiptActivity();
+
         //calculateParkingCharges();
         getValues();
 //        switch (view.getId()){
@@ -155,15 +159,39 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
     }
 
-//    private void openViewReceiptActivity() {
-//        Intent receiptIntent = new Intent(AddActivity.this, ViewReceiptActivity.class);
-//        receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
-//        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
-//        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
-//        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
-//        //receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
-//        startActivity(receiptIntent);
-//    }
+    private void openViewReceiptActivity() {
+
+
+        buildingCode = edtBuildingCode.getText().toString();
+        carPlate = edtCarPlate.getText().toString();
+        hostSuite = edtHostSuite.getText().toString();
+        parkingDuration = edtDuration.getText().toString();
+
+        if(Integer.parseInt(parkingDuration) <= 1){
+            parkingCharges = 4;
+        } if (Integer.parseInt(parkingDuration) <= 3){
+            parkingCharges = 8;
+        } if (Integer.parseInt(parkingDuration) <= 10){
+            parkingCharges = 12;
+        } else {
+            parkingCharges = 20;
+        }
+
+        parkingAmount = "$" + parkingCharges;
+
+
+        Intent receiptIntent = new Intent(AddActivity.this, PassingActivity.class);
+        receiptIntent.putExtra("EXTRA_BUILDING_CODE", buildingCode);
+        receiptIntent.putExtra("EXTRA_CAR_PLATE", carPlate);
+        receiptIntent.putExtra("EXTRA_HOST_SUITE", hostSuite);
+        receiptIntent.putExtra("EXTRA_PARKING_DURATION", parkingDuration);
+        receiptIntent.putExtra("EXTRA_PARKING_AMOUNT", parkingAmount);
+        receiptIntent.putExtra("EXTRA_DATE", strDate);
+        receiptIntent.putExtra("EXTRA_TIME", strTime);
+        startActivity(receiptIntent);
+
+
+    }
 
 
     private void getAllUsers(){
