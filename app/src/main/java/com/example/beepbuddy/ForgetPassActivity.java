@@ -50,6 +50,7 @@ public class ForgetPassActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+
     void referWidgets(){
         editEmail= findViewById(R.id.editEmailFP);
         editPlate = findViewById(R.id.editPlateFP);
