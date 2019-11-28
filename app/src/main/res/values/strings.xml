@@ -97,6 +97,8 @@
     <string name="supportNum">Tel. 123-456-7890</string>
     <string name="supEmail">Email: beepbuddy@support.com</string>
     <string name="supportIcon">icon for support page</string>
+    <string name="homePage">HOME PAGE</string>
+    <string name="ReceiptList">RECEIPT LIST</string>
     <string-array name="year_array">
         <item>@string/nineteen</item>
         <item>@string/twenty</item>

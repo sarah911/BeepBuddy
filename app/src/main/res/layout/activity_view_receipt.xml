@@ -10,8 +10,10 @@
         android:id="@+id/tvHeading2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/parkingReceipt"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,9 +22,11 @@
         android:id="@+id/tvCarPlateNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/carPlate"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeading2" />
 
@@ -30,9 +34,11 @@
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/date"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCarPlateNumber" />
 
@@ -40,9 +46,11 @@
         android:id="@+id/tvParking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/time"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
@@ -50,9 +58,11 @@
         android:id="@+id/tvParkingDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/parkingDuration"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvParking" />
 
@@ -60,9 +70,11 @@
         android:id="@+id/tvBuildingCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/buildingCode"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvParkingDuration" />
 
@@ -70,9 +82,11 @@
         android:id="@+id/tvHostSuite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/suiteNumber"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBuildingCode" />
 
@@ -80,9 +94,11 @@
         android:id="@+id/tvParkingCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/parkingCost"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHostSuite" />
 
@@ -90,8 +106,10 @@
         android:id="@+id/tv1CarPlateNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvCarPlateNumber"
         app:layout_constraintTop_toBottomOf="@+id/tvHeading2" />
@@ -100,59 +118,66 @@
         android:id="@+id/tv1Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvDate"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1CarPlateNumber"
         app:layout_constraintTop_toBottomOf="@+id/tv1CarPlateNumber" />
 
     <TextView
         android:id="@+id/tv1Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvParking"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1Date"
         app:layout_constraintTop_toBottomOf="@+id/tv1Date" />
 
     <TextView
         android:id="@+id/tv1ParkingDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvParkingDuration"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1Time"
         app:layout_constraintTop_toBottomOf="@+id/tv1Time" />
 
     <TextView
         android:id="@+id/tv1BuildingCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvBuildingCode"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1ParkingDuration"
         app:layout_constraintTop_toBottomOf="@+id/tv1ParkingDuration" />
 
     <TextView
         android:id="@+id/tv1HostSuite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvHostSuite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1BuildingCode"
         app:layout_constraintTop_toBottomOf="@+id/tv1BuildingCode" />
 
     <TextView
         android:id="@+id/tv1ParkingCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/baloo"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvParkingCost"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv1HostSuite"
         app:layout_constraintTop_toBottomOf="@+id/tv1HostSuite" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

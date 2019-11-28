@@ -1,20 +1,22 @@
 package com.example.beepbuddy;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import com.example.beepbuddy.model.User;
 import com.example.beepbuddy.viewmodel.UserViewModel;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Calendar;
 import java.util.List;
 
 public class ViewReceiptActivity extends AppCompatActivity {
+
+//    Button btnRHome;
+//    Button btnRList;
 
     TextView tv1CarPlateNumber;
     TextView tv1Date;
@@ -49,9 +51,12 @@ public class ViewReceiptActivity extends AppCompatActivity {
         set(strTime);
         display(strDate);
 
+        //btnRHome = findViewById(R.id.btnRHome);
+
+
     }
 
-    private void set(String time){
+    private void set(String time) {
         tv1Time = findViewById(R.id.tv1Time);
         tv1Time.setText(time);
     }
@@ -79,11 +84,13 @@ public class ViewReceiptActivity extends AppCompatActivity {
         parkingAmount = this.getIntent().getStringExtra("EXTRA_PARKING_AMOUNT");
         parkingDuration = this.getIntent().getIntExtra("EXTRA_PARKING_DURATION", 0);
 
-         if(this.parkingDuration <= 1){
+        if (this.parkingDuration <= 1) {
             parkingAmount = "4";
-        } if (this.parkingDuration <= 3){
+        }
+        if (this.parkingDuration <= 3) {
             parkingAmount = "8";
-        } if (this.parkingDuration <= 10){
+        }
+        if (this.parkingDuration <= 10) {
             parkingAmount = "12";
         } else {
             parkingAmount = "20";
@@ -92,7 +99,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         userViewModel.getAllUsers().observe(ViewReceiptActivity.this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> allUsers) {
-                for(User user : allUsers){
+                for (User user : allUsers) {
                     //if(user.getPlateNumber().equals(carPlate)){
                     tv1BuildingCode.setText(buildingCode);
                     tv1CarPlateNumber.setText(carPlate);
@@ -106,7 +113,30 @@ public class ViewReceiptActivity extends AppCompatActivity {
         });
 
     }
-
-
 }
+
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.btnRHome:
+//                this.openHomepage();
+//                break;
+//            case R.id.btnRList:
+//                this.openList();
+//                break;
+//        }
+//    }
+//
+//    void openHomepage(){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        this.startActivity(intent);
+//    }
+//    void openList(){
+//        Intent intentI = new Intent(this, MapsActivity.class);
+//        this.startActivity(intentI);
+//    }
+
+
+
+//}
 
