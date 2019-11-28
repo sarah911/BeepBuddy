@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.openAddParking();
                 break;
             case R.id.item_receipts:
-                //TODO add page for receipt lists
+                this.openReceiptList();
                 break;
             case R.id.item_search:
                 this.openSearchParking();
@@ -127,5 +127,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void openSearchParking(){
         Intent intentI = new Intent(this, MapsActivity.class);
         this.startActivity(intentI);
+    }
+
+    void openReceiptList(){
+        Intent intentR = new Intent(this,ReceiptListActivity.class);
+        this.startActivity(intentR);
     }
 }
